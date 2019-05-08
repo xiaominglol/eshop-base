@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/eshop-base.iml" filepath="$PROJECT_DIR$/eshop-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eshop-common/eshop-common.iml" filepath="$PROJECT_DIR$/eshop-common/eshop-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eshop-config/eshop-config.iml" filepath="$PROJECT_DIR$/eshop-config/eshop-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eshop-config-repo/eshop-config-repo.iml" filepath="$PROJECT_DIR$/eshop-config-repo/eshop-config-repo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eshop-eureka/eshop-eureka.iml" filepath="$PROJECT_DIR$/eshop-eureka/eshop-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eshop-gateway/eshop-gateway.iml" filepath="$PROJECT_DIR$/eshop-gateway/eshop-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eshop-turbine/eshop-turbine.iml" filepath="$PROJECT_DIR$/eshop-turbine/eshop-turbine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eshop-zipkin/eshop-zipkin.iml" filepath="$PROJECT_DIR$/eshop-zipkin/eshop-zipkin.iml" />
+    </modules>
+  </component>
+</project>

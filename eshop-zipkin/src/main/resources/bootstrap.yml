@@ -1,0 +1,20 @@
+spring:
+  application:
+    # 对应config server所获取的配置文件{application}
+    name: Zipkin-Server
+#  cloud:
+#    config:
+#      # 指定获取配置文件的profile
+#      # profile:
+#      # 指定config server服务地址
+#      # uri: http://localhost:1001/
+#      discovery:
+#        # 表示开启通过服务发现组件访问Config Server的功能，而不再使用指定Config Server的uri
+#        enabled: true
+#        # 指定Config Server在服务发现组件中的serviceId
+#        service-id: CONFIG-SERVER
+  rabbitmq:
+      host: 47.110.47.45
+      port: 5672
+      username: guest
+      password: guest

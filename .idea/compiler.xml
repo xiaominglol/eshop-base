@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="config" />
+        <module name="eshop-common" />
+        <module name="eshop-config" />
+        <module name="eshop-config-repo" />
+        <module name="eshop-eureka" />
+        <module name="eshop-gateway" />
+        <module name="eshop-sleuth" />
+        <module name="eshop-turbine" />
+        <module name="eshop-zipkin" />
+        <module name="eureka" />
+        <module name="hystrix-dashboard" />
+        <module name="hystrixdashboard" />
+        <module name="sleuth-zipkin" />
+        <module name="turbine" />
+      </profile>
+      <profile name="Annotation profile for springcloud-base" enabled="true">
+        <sourceOutputDir name="../sleuthzipkin/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../sleuthzipkin/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="sleuthzipkin" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="config" target="1.8" />
+      <module name="demo" target="1.8" />
+      <module name="eshop-base" target="1.8" />
+      <module name="eshop-common" target="1.8" />
+      <module name="eshop-config" target="1.8" />
+      <module name="eshop-config-repo" target="1.8" />
+      <module name="eshop-eureka" target="1.8" />
+      <module name="eshop-gateway" target="1.8" />
+      <module name="eshop-sleuth" target="1.8" />
+      <module name="eshop-turbine" target="1.8" />
+      <module name="eshop-zipkin" target="1.8" />
+      <module name="eureka" target="1.8" />
+      <module name="hystrix-dashboard" target="1.8" />
+      <module name="hystrixdashboard" target="1.8" />
+      <module name="sleuth-zipkin" target="1.8" />
+      <module name="sleuthzipkin" target="1.8" />
+      <module name="springcloud-base" target="1.8" />
+      <module name="turbine" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

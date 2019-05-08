@@ -1,0 +1,23 @@
+package com.gemini.config;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.config.server.EnableConfigServer;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+/**
+ * Config服务端
+ *
+ * @EnableDiscoverClient和@EnableEurekaClient区别
+ *
+ * @author 小明不读书
+ * @date 2019-03-22
+ */
+@EnableEurekaClient
+@EnableConfigServer
+@SpringBootApplication
+public class ConfigApplication {
+	public static void main(String[] args) {
+		SpringApplication.run(ConfigApplication.class, args);
+	}
+}

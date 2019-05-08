@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: Config-Server
+  cloud:
+    config:
+      server:
+        git:
+          #github SSH连接地址 不是 HTTP连接地址
+          uri: git@github.com:xiaominglol/eshop-config.git
+          # 搜索目录下的配置
+          search-paths: base
+          # 服务启动时就clone Git仓库，快速识别错误的配置
+          clone-on-start: true
+    # 开启/trace端点，测试http://localhost:1001/actuator/httptrace
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 47.110.47.45
+    port: 5672
+    username: guest
+    password: guest

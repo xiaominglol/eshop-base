@@ -1,4 +1,4 @@
-package com.gemini.web.config;
+package com.gemini.orm.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.mybatis.spring.annotation.MapperScan;

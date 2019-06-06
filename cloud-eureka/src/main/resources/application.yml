@@ -9,6 +9,9 @@ spring:
 #      name: eurekaadmin
 #      password: 123456
 eureka:
+#  server:
+    #关闭自我保护
+#    enable-self-preservation: false
   client:
     #表示是否将自己注册到Eureka Server，默认true
     register-with-eureka: true

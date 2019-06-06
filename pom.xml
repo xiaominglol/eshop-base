@@ -28,6 +28,7 @@
         <module>cloud-sms</module>
         <module>cloud-activity</module>
         <module>cloud-admin</module>
+        <module>cloud-orm</module>
     </modules>
 
     <properties>

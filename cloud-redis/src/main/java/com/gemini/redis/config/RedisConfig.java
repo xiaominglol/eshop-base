@@ -1,4 +1,4 @@
-package com.gemini.web.config;
+package com.gemini.redis.config;
 
 
 import org.springframework.cache.annotation.EnableCaching;

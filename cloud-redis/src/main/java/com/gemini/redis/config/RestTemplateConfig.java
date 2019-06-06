@@ -1,4 +1,4 @@
-package com.gemini.web.config;//package com.gemini.common.config;
+package com.gemini.redis.config;//package com.gemini.common.config;
 //
 //import com.netflix.loadbalancer.IRule;
 //import com.netflix.loadbalancer.RoundRobinRule;

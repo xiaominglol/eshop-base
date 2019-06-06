@@ -29,6 +29,8 @@
         <module>cloud-activity</module>
         <module>cloud-admin</module>
         <module>cloud-orm</module>
+        <module>mq-example/sender</module>
+        <module>mq-example/receive</module>
     </modules>
 
     <properties>

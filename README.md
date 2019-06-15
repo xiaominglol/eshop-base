@@ -1,5 +1,11 @@
 # common-framework  公共框架
 
+包名：com.gemini.cloud
+
+> 核心基础工程
+
+cloud-core          核心模块
+
 > 微服务工程
 
 cloud-eureka        服务注册中心        已完成

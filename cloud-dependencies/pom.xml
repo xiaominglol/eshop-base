@@ -17,14 +17,14 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <cloud.framework.version>1.0.0-SNAPSHOT</cloud.framework.version>
-        <cloud.business.version>1.0.0-SNAPSHOT</cloud.business.version>
+        <cloud-framework.version>2.0.0-SNAPSHOT</cloud-framework.version>
+        <cloud-business.version>2.0.0-SNAPSHOT</cloud-business.version>
 
         <spring-boot.version>2.1.5.RELEASE</spring-boot.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
 
         <mybatis.version>2.0.1</mybatis.version>
-        <mybatis-plus.version>3.0.7.1</mybatis-plus.version>
+        <mybatis-plus.version>3.1.1</mybatis-plus.version>
         <druid.version>1.1.17</druid.version>
         <p6spy.version>3.8.1</p6spy.version>
         <!-- 版本管理工具 -->
@@ -55,6 +55,28 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--自定义模块-->
+            <dependency>
+                <groupId>com.gemini.cloud.framework</groupId>
+                <artifactId>cloud-core</artifactId>
+                <version>${cloud-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gemini.cloud.framework</groupId>
+                <artifactId>cloud-web</artifactId>
+                <version>${cloud-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gemini.cloud.framework</groupId>
+                <artifactId>cloud-mybatis</artifactId>
+                <version>${cloud-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gemini.cloud.framework</groupId>
+                <artifactId>cloud-stream-mq</artifactId>
+                <version>${cloud-framework.version}</version>
+            </dependency>
+            <!--第三方模块-->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>

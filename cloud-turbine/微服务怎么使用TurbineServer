@@ -32,3 +32,7 @@ eureka:
 3、主启动类添加注解
 
 @EnableEurekaClient
+
+访问
+http://localhost:4001
+http://localhost:4001/turbine.stream

@@ -1,17 +1,7 @@
 server:
   port: 4001
-eureka:
-  client:
-    service-url:
-      #与服务端地址一样，将客服端注册到服务端
-      defaultZone: http://eureka2001.com:2001/eureka/,http://eureka2002.com:2002/eureka/
-  instance:
-    #自定义主机映射名称
-    instance-id: ${spring.application.name}-${server.port}
-    #表示将自己的IP注册到Eureka Server
-    prefer-ip-address: true
 turbine:
   #需要监控的微服务名称
-  app-config: gemini-product-provider,gemini-product-provider-8004,member-restapi,order-restapi
+  app-config: core-example-server
   #待测试
   cluster-name-expression: "'default'"

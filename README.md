@@ -1,18 +1,20 @@
 # common-framework  公共框架
 
-包名：com.gemini.cloud
+包名：com.gemini.cloud.framework
 
 > 核心基础工程
 
-cloud-core          核心模块
+cloud-dependencies  核心依赖模块        已完成
+
+cloud-core          核心模块            已完成
 
 > 微服务工程
 
 cloud-eureka        服务注册中心        已完成
 
-cloud-config        配置中心
+cloud-config        配置中心            暂时用apollo代替
 
-cloud-config-repo   配置管理
+cloud-config-repo   配置管理            暂时用apollo代替
 
 cloud-apollo        配置中心
 
@@ -20,7 +22,7 @@ cloud-gateway       路由网关
 
 cloud-turbine       服务监控            已完成
 
-cloud-zipkin        服务跟踪            已完成
+cloud-zipkin        服务跟踪            已完成(已改为docker启动)
 
 cloud-admin         Admin工程
 
@@ -30,7 +32,7 @@ cloud-oauth2        鉴权工程
 
 cloud-web           Web工程             已完成
 
-cloud-orm           Orm工程             已完成
+cloud-mybatis       mybatis工程         已完成
 
 cloud-redis         缓存工程            已完成
 
@@ -40,11 +42,11 @@ cloud-es            搜索工程
 
 cloud-activity      工作流工程
 
-cloud-mail
+cloud-mail          邮件模块
 
-cloud-quartz
+cloud-quartz        定时任务模块
 
-cloud-sms
+cloud-sms           短信模块
 
-cloud-swagger
+cloud-swagger       接口模块
 

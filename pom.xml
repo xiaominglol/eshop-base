@@ -15,14 +15,18 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>cloud-core</module>
         <module>cloud-eureka</module>
+        <module>cloud-web</module>
         <module>cloud-config</module>
         <module>cloud-config-repo</module>
         <module>cloud-gateway</module>
         <module>cloud-turbine</module>
         <module>cloud-zipkin</module>
+        <module>cloud-mybatis</module>
+
+
         <module>cloud-stream-mq</module>
-        <module>cloud-web</module>
         <module>cloud-redis</module>
         <module>cloud-es</module>
         <module>cloud-mail</module>
@@ -32,11 +36,14 @@
         <module>cloud-sms</module>
         <module>cloud-activity</module>
         <module>cloud-admin</module>
-        <module>cloud-orm</module>
-        <module>cloud-core</module>
     </modules>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-test</artifactId>

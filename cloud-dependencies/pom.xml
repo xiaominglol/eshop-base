@@ -17,16 +17,20 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+<!--        业务版本-->
         <cloud-framework.version>2.0.0-SNAPSHOT</cloud-framework.version>
         <cloud-business.version>2.0.0-SNAPSHOT</cloud-business.version>
 
+<!--        框架版本-->
         <spring-boot.version>2.1.5.RELEASE</spring-boot.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
 
+<!--        第三方版本-->
         <mybatis.version>2.0.1</mybatis.version>
         <mybatis-plus.version>3.1.1</mybatis-plus.version>
         <druid.version>1.1.17</druid.version>
         <p6spy.version>3.8.1</p6spy.version>
+        <redisson.version>3.11.0</redisson.version>
         <!-- 版本管理工具 -->
         <versions-maven.version>2.7</versions-maven.version>
 
@@ -73,6 +77,11 @@
             </dependency>
             <dependency>
                 <groupId>com.gemini.cloud.framework</groupId>
+                <artifactId>cloud-redis</artifactId>
+                <version>${cloud-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gemini.cloud.framework</groupId>
                 <artifactId>cloud-stream-mq</artifactId>
                 <version>${cloud-framework.version}</version>
             </dependency>
@@ -96,6 +105,11 @@
                 <groupId>p6spy</groupId>
                 <artifactId>p6spy</artifactId>
                 <version>${p6spy.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

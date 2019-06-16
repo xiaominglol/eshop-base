@@ -1,23 +1,29 @@
-package com.gemini.cloud.framework.web.config;
+package com.gemini.cloud.framework.redis.config;
 
 
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * @author 小明不读书
  * @date 2018-11-07
+ * @since 1.0.0
  */
 @EnableCaching
 @Configuration
 public class RedisConfig {
 
     /**
-     * 默认如果保存对象，使用jdk序列化机制，序列化后的数据保存到redis中
+     * 默认情况下的模板只能支持RedisTemplate<String, String>，也就是只能存入字符串
+     * 如果保存对象，使用jdk序列化机制，序列化后的数据保存到redis中
      * 1、将数据以json的方式保存
      * (1)自己将对象转为json
      * (2)redisTemplate默认的序列化规则；改变默认的序列化规则；
@@ -26,12 +32,17 @@ public class RedisConfig {
      * @return
      */
     @Bean
-    public RedisTemplate<Object, Object> objectRedisTemplate(
+    public RedisTemplate<String, Object> objectRedisTemplate(
             RedisConnectionFactory redisConnectionFactory) {
-        RedisTemplate<Object, Object> template = new RedisTemplate<Object, Object>();
+        RedisTemplate<String, Object> template = new RedisTemplate<>();
+//        template.setConnectionFactory(redisConnectionFactory);
+//        Jackson2JsonRedisSerializer<Object> ser = new Jackson2JsonRedisSerializer<>(Object.class);
+//        template.setDefaultSerializer(ser);
+        template.setKeySerializer(new StringRedisSerializer());
+        template.setValueSerializer(new GenericJackson2JsonRedisSerializer());
+        template.setHashKeySerializer(new StringRedisSerializer());
+        template.setHashValueSerializer(new GenericJackson2JsonRedisSerializer());
         template.setConnectionFactory(redisConnectionFactory);
-        Jackson2JsonRedisSerializer<Object> ser = new Jackson2JsonRedisSerializer<Object>(Object.class);
-        template.setDefaultSerializer(ser);
         return template;
     }
 

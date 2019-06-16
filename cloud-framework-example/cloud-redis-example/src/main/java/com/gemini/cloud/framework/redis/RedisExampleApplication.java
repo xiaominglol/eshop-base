@@ -9,8 +9,8 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("com.gemini.cloud.framework")
 @EnableEurekaClient
 @SpringBootApplication
-public class MybatisExampleApplication {
+public class RedisExampleApplication {
     public static void main(String[] args) throws CloudCoreException {
-        CoreApplication.run(MybatisExampleApplication.class, args);
+        CoreApplication.run(RedisExampleApplication.class, args);
     }
 }

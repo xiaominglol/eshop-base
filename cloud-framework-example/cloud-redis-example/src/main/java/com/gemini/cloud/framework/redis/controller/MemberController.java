@@ -1,6 +1,5 @@
 package com.gemini.cloud.framework.redis.controller;
 
-import com.gemini.cloud.framework.redis.moder.Member;
 import com.gemini.cloud.framework.redis.service.MemberService;
 import com.gemini.cloud.framework.web.mvc.model.Message;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,7 @@ public class MemberController {
 
     @GetMapping("/member")
     public Message list() {
-        List<Member> memberList = memberService.list();
+        List<Object> memberList = memberService.list();
         return Message.success(memberList);
     }
 }

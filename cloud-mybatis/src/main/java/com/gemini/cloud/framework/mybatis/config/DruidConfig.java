@@ -1,4 +1,4 @@
-//package com.gemini.cloud.framework.mybatis.config;
+//package com.gemini.cloud.framework.redis.config;
 //
 //import com.alibaba.druid.pool.DruidDataSource;
 //import com.alibaba.druid.support.http.StatViewServlet;

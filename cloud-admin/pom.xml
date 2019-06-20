@@ -12,5 +12,14 @@
 
     <artifactId>cloud-admin</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.gemini.cloud.framework</groupId>
+            <artifactId>cloud-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-server</artifactId>
+        </dependency>
+    </dependencies>
 </project>

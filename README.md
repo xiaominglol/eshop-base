@@ -8,7 +8,7 @@ cloud-dependencies  核心依赖模块        已完成
 
 cloud-core          核心模块            已完成
 
-> 微服务工程
+> 核心框架工程
 
 cloud-eureka        服务注册中心        已完成
 
@@ -36,7 +36,7 @@ cloud-mybatis       mybatis工程         已完成
 
 cloud-redis         缓存工程            已完成
 
-cloud-mq     消息队列工程        已完成
+cloud-mq            消息队列工程        已完成
 
 cloud-es            搜索工程
 

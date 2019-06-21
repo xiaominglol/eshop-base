@@ -90,7 +90,7 @@
             </dependency>
             <dependency>
                 <groupId>com.gemini.cloud.framework</groupId>
-                <artifactId>cloud-stream-mq</artifactId>
+                <artifactId>cloud-mq</artifactId>
                 <version>${cloud-framework.version}</version>
             </dependency>
             <!--第三方模块-->

@@ -55,10 +55,36 @@ public class DateUtils {
         return result;
     }
 
+    /**
+     * 得到当前时间的前N小时
+     * 
+     * @param past
+     * @return
+     */
+    public static String getBeforeHourForPast(int past){
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, calendar.get(Calendar.HOUR_OF_DAY) - past);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String result = sdf.format(calendar.getTime());
+        return result;
+    }
+
+    public static String getBeforeMinuteForPast(int past) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.MINUTE, calendar.get(Calendar.MINUTE) - past);
+        Date beforeD = calendar.getTime();
+        String result = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(beforeD);
+        return result;
+    }
+
     public static void main(String[] strings) throws ParseException {
         String date = "2018-01-06";
         String result = getBeforeDateForPast(date, 7);
         System.out.println(result);
+
+        String beforeHourForPast = getBeforeHourForPast(1);
+        System.out.println(beforeHourForPast);
+
     }
 
 }

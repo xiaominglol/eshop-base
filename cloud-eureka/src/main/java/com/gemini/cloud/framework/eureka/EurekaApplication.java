@@ -1,4 +1,4 @@
-package com.gemini.eureka;
+package com.gemini.cloud.framework.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

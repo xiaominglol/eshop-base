@@ -18,8 +18,8 @@
         <module>cloud-core-web-example</module>
         <module>cloud-mybatis-example</module>
         <module>cloud-redis-example</module>
-        <module>cloud-stream-mq-example/receive</module>
-        <module>cloud-stream-mq-example/sender</module>
+        <module>cloud-mq-example/receive</module>
+        <module>cloud-mq-example/sender</module>
     </modules>
 
     <dependencies>

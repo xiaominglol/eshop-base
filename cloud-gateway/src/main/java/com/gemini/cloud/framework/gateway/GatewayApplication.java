@@ -1,4 +1,4 @@
-package com.gemini.hystrix.dashboard;
+package com.gemini.cloud.framework.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @EnableHystrixDashboard
 @SpringBootApplication
-public class HystrixDashboardApplication {
+public class GatewayApplication {
 	/**
 	 * @return	监控中心控制台的首页
 	 */
@@ -23,6 +23,6 @@ public class HystrixDashboardApplication {
 		return "forward:/hystrix";
 	}
 	public static void main(String[] args) {
-		SpringApplication.run(HystrixDashboardApplication.class, args);
+		SpringApplication.run(GatewayApplication.class, args);
 	}
 }

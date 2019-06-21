@@ -24,7 +24,7 @@ cloud-turbine       服务监控            已完成
 
 cloud-zipkin        服务跟踪            已完成(已改为docker启动)
 
-cloud-admin         Admin工程
+cloud-admin         Admin工程           已完成
 
 cloud-oauth2        鉴权工程
 
@@ -36,7 +36,7 @@ cloud-mybatis       mybatis工程         已完成
 
 cloud-redis         缓存工程            已完成
 
-cloud-stream-mq     消息队列工程        已完成
+cloud-mq     消息队列工程        已完成
 
 cloud-es            搜索工程
 

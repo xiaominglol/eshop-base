@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>com.gemini.cloud.framework</groupId>
-            <artifactId>cloud-stream-mq</artifactId>
+            <artifactId>cloud-mq</artifactId>
         </dependency>
     </dependencies>
 </project>

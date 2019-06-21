@@ -24,10 +24,11 @@
         <module>cloud-turbine</module>
         <module>cloud-zipkin</module>
         <module>cloud-mybatis</module>
-
-
-        <module>cloud-stream-mq</module>
+        <module>cloud-mq</module>
         <module>cloud-redis</module>
+        <module>cloud-admin</module>
+
+
         <module>cloud-es</module>
         <module>cloud-mail</module>
         <module>cloud-quartz</module>
@@ -35,7 +36,6 @@
         <module>cloud-swagger</module>
         <module>cloud-sms</module>
         <module>cloud-activity</module>
-        <module>cloud-admin</module>
     </modules>
 
     <dependencies>

@@ -13,7 +13,6 @@
     <artifactId>cloud-gateway</artifactId>
 
     <dependencies>
-        <!--hystrix-dashboard监控-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>

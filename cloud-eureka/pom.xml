@@ -24,4 +24,26 @@
             <!--<artifactId>spring-boot-starter-security</artifactId>-->
         <!--</dependency>-->
     </dependencies>
+    <build>
+        <plugins>
+            <!--打包-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!--主类 包含main-->
+                    <mainClass>com.gemini.cloud.framework.eureka.EurekaApplication</mainClass>
+                    <!--包类型(必须大写) JAR，WAR，ZIP，MODULE，NONE-->
+                    <layout>JAR</layout>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

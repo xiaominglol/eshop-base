@@ -20,6 +20,7 @@
         <module>cloud-redis-example</module>
         <module>cloud-mq-example/receive</module>
         <module>cloud-mq-example/sender</module>
+        <module>cloud-web-flux-example</module>
     </modules>
 
     <dependencies>

@@ -65,4 +65,35 @@
             <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
     </dependencies>
+
+
+
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            &lt;!&ndash;打包&ndash;&gt;-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    &lt;!&ndash;主类 包含main&ndash;&gt;-->
+<!--                    <mainClass>com.gemini.cloud.framework.eureka.EurekaApplication</mainClass>-->
+<!--                    &lt;!&ndash;包类型(必须大写) JAR，WAR，ZIP，MODULE，NONE&ndash;&gt;-->
+<!--                    <layout>JAR</layout>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--            &lt;!&ndash;忽略了在工程构建时对测试用例的调用&ndash;&gt;-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <skipTests>true</skipTests>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--            &lt;!&ndash; 一键更新子模块版本号 &ndash;&gt;-->
+<!--            <plugin>-->
+<!--                <groupId>org.codehaus.mojo</groupId>-->
+<!--                <artifactId>versions-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 </project>

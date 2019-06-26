@@ -1,28 +1,19 @@
 package com.gemini.cloud.framework.gateway;
 
-import org.springframework.boot.SpringApplication;
+import com.gemini.cloud.framework.core.CoreApplication;
+import com.gemini.cloud.framework.core.exception.CloudCoreException;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
- * HystrixDashboard监控
+ * Gateway服务网关
  * @author 小明不读书
- * @date 2019-03-22
+ * @date 2019-06-26
  */
-@Controller
-@EnableHystrixDashboard
+@EnableEurekaClient
 @SpringBootApplication
 public class GatewayApplication {
-	/**
-	 * @return	监控中心控制台的首页
-	 */
-	@RequestMapping("/")
-	public String index(){
-		return "forward:/hystrix";
-	}
-	public static void main(String[] args) {
-		SpringApplication.run(GatewayApplication.class, args);
+	public static void main(String[] args) throws CloudCoreException {
+		CoreApplication.run(GatewayApplication.class, args);
 	}
 }

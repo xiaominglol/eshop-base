@@ -1,7 +1,7 @@
 spring:
   datasource:
     druid:
-      #不配置否则报错Caused by: java.lang.IllegalStateException: dbType not support : null, url jdbc:p6spy:mysql://localhost:3306/eshop_member?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      #引入了p6spy模块后，需要指定db-type,不配置否则报错Caused by: java.lang.IllegalStateException: dbType not support : null, url jdbc:p6spy:mysql://localhost:3306/eshop_member?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       db-type: mysql
       connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMills=5000
 #      driver-class-name: com.mysql.jdbc.Driver
@@ -10,9 +10,9 @@ spring:
       min-evictable-idle-time-millis: 300000
       pool-prepared-statements: true
       stat-view-servlet:
-        enabled: 'true '
-        login-password: 'druid123'
-        login-username: druid
+        enabled: true
+        login-username: 'admin'
+        login-password: 'admin'
         reset-enable: true
       test-on-borrow: false
       test-on-return: false
@@ -21,10 +21,6 @@ spring:
       validation-query: SELECT 1
       validation-query-timeout: 1000
       web-stat-filter:
-        enable: true
-        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/* '
+        enabled: true
         url-pattern: /*
-  mvc:
-    throw-exception-if-no-handler-found: true
-  resources:
-    add-mappings: false
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/* '

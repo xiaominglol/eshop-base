@@ -1,3 +1,2 @@
-cloud:
-  id: cloud-id-test
-  name: 小明
+server:
+  port: 6001

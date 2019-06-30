@@ -6,6 +6,11 @@ import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
+/**
+ * Admin服务
+ * @author 小明不读书
+ * @date 2019-06-22
+ */
 @EnableAdminServer
 @EnableEurekaClient
 @SpringBootApplication

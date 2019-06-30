@@ -1,4 +1,4 @@
-package com.gemini.cloud.framework.core;
+package com.gemini.cloud.framework.mybatis.controller;
 
 import com.gemini.cloud.framework.web.mvc.model.Message;
 import org.springframework.beans.factory.annotation.Value;

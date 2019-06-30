@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/cloud-config/cloud-config.iml" filepath="$PROJECT_DIR$/cloud-config/cloud-config.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-config-repo/cloud-config-repo.iml" filepath="$PROJECT_DIR$/cloud-config-repo/cloud-config-repo.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-core/cloud-core.iml" filepath="$PROJECT_DIR$/cloud-core/cloud-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-framework-example/cloud-core-web-example/cloud-core-web-example.iml" filepath="$PROJECT_DIR$/cloud-framework-example/cloud-core-web-example/cloud-core-web-example.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-es/cloud-es.iml" filepath="$PROJECT_DIR$/cloud-es/cloud-es.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-eureka/cloud-eureka.iml" filepath="$PROJECT_DIR$/cloud-eureka/cloud-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-framework.iml" filepath="$PROJECT_DIR$/cloud-framework.iml" />
@@ -14,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/cloud-mail/cloud-mail.iml" filepath="$PROJECT_DIR$/cloud-mail/cloud-mail.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-mq/cloud-mq.iml" filepath="$PROJECT_DIR$/cloud-mq/cloud-mq.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-mybatis/cloud-mybatis.iml" filepath="$PROJECT_DIR$/cloud-mybatis/cloud-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-framework-example/cloud-mybatis-example/cloud-mybatis-example.iml" filepath="$PROJECT_DIR$/cloud-framework-example/cloud-mybatis-example/cloud-mybatis-example.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-oauth2/cloud-oauth2.iml" filepath="$PROJECT_DIR$/cloud-oauth2/cloud-oauth2.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-quartz/cloud-quartz.iml" filepath="$PROJECT_DIR$/cloud-quartz/cloud-quartz.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-redis/cloud-redis.iml" filepath="$PROJECT_DIR$/cloud-redis/cloud-redis.iml" />

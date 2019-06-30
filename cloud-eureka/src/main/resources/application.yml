@@ -1,8 +1,6 @@
 spring:
   profiles:
     active: eureka2001
-  application:
-    name: Eureka-Server
   #开启用户认证
 #  security:
 #    user:

@@ -10,6 +10,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @author 小明不读书
  * @date 2019-06-26
  */
+
 @EnableEurekaClient
 @SpringBootApplication
 public class GatewayApplication {

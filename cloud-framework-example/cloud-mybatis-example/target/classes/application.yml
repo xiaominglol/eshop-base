@@ -1,3 +1,5 @@
+server:
+  port: 8081
 spring:
   datasource:
     druid:
@@ -9,3 +11,6 @@ spring:
 #      url: jdbc:mysql://localhost:3306/eshop_member?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
       password: root
+cloud:
+  id: cloud-id-test
+  name: 小明a

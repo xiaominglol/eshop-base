@@ -6,12 +6,21 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/config/pom.xml" />
         <option value="$PROJECT_DIR$/eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-stream-mq/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-framework-example/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-framework-example/cloud-core-web-example/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-framework-example/cloud-mybatis-example/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-framework-example/cloud-redis-example/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-dependencies/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/cloud-framework-example/pom.xml" />
+      </set>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

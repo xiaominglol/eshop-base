@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/cloud-config-repo/cloud-config-repo.iml" filepath="$PROJECT_DIR$/cloud-config-repo/cloud-config-repo.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-core/cloud-core.iml" filepath="$PROJECT_DIR$/cloud-core/cloud-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-framework-example/cloud-core-web-example/cloud-core-web-example.iml" filepath="$PROJECT_DIR$/cloud-framework-example/cloud-core-web-example/cloud-core-web-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-dependencies/cloud-dependencies.iml" filepath="$PROJECT_DIR$/cloud-dependencies/cloud-dependencies.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-es/cloud-es.iml" filepath="$PROJECT_DIR$/cloud-es/cloud-es.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-eureka/cloud-eureka.iml" filepath="$PROJECT_DIR$/cloud-eureka/cloud-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-framework.iml" filepath="$PROJECT_DIR$/cloud-framework.iml" />
@@ -19,19 +20,15 @@
       <module fileurl="file://$PROJECT_DIR$/cloud-oauth2/cloud-oauth2.iml" filepath="$PROJECT_DIR$/cloud-oauth2/cloud-oauth2.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-quartz/cloud-quartz.iml" filepath="$PROJECT_DIR$/cloud-quartz/cloud-quartz.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-redis/cloud-redis.iml" filepath="$PROJECT_DIR$/cloud-redis/cloud-redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-framework-example/cloud-redis-example/cloud-redis-example.iml" filepath="$PROJECT_DIR$/cloud-framework-example/cloud-redis-example/cloud-redis-example.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-sms/cloud-sms.iml" filepath="$PROJECT_DIR$/cloud-sms/cloud-sms.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-swagger/cloud-swagger.iml" filepath="$PROJECT_DIR$/cloud-swagger/cloud-swagger.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-turbine/cloud-turbine.iml" filepath="$PROJECT_DIR$/cloud-turbine/cloud-turbine.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-web/cloud-web.iml" filepath="$PROJECT_DIR$/cloud-web/cloud-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-framework-example/cloud-web-flux-example/cloud-web-flux-example.iml" filepath="$PROJECT_DIR$/cloud-framework-example/cloud-web-flux-example/cloud-web-flux-example.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-zipkin/cloud-zipkin.iml" filepath="$PROJECT_DIR$/cloud-zipkin/cloud-zipkin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eshop-base.iml" filepath="$PROJECT_DIR$/eshop-base.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eshop-common/eshop-common.iml" filepath="$PROJECT_DIR$/eshop-common/eshop-common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eshop-config/eshop-config.iml" filepath="$PROJECT_DIR$/eshop-config/eshop-config.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eshop-config-repo/eshop-config-repo.iml" filepath="$PROJECT_DIR$/eshop-config-repo/eshop-config-repo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eshop-eureka/eshop-eureka.iml" filepath="$PROJECT_DIR$/eshop-eureka/eshop-eureka.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eshop-gateway/eshop-gateway.iml" filepath="$PROJECT_DIR$/eshop-gateway/eshop-gateway.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eshop-turbine/eshop-turbine.iml" filepath="$PROJECT_DIR$/eshop-turbine/eshop-turbine.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eshop-zipkin/eshop-zipkin.iml" filepath="$PROJECT_DIR$/eshop-zipkin/eshop-zipkin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-framework-example/cloud-mq-example/receive/receive.iml" filepath="$PROJECT_DIR$/cloud-framework-example/cloud-mq-example/receive/receive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-framework-example/cloud-mq-example/sender/sender.iml" filepath="$PROJECT_DIR$/cloud-framework-example/cloud-mq-example/sender/sender.iml" />
     </modules>
   </component>
 </project>

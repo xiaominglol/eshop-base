@@ -27,6 +27,7 @@
         <spring-boot-admin.version>2.1.5</spring-boot-admin.version>
 
 <!--        第三方版本-->
+        <apollo.version>1.4.0</apollo.version>
         <mybatis.version>2.0.1</mybatis.version>
         <mybatis-plus.version>3.1.1</mybatis-plus.version>
         <druid.version>1.1.17</druid.version>
@@ -75,6 +76,11 @@
             </dependency>
             <dependency>
                 <groupId>com.gemini.cloud.framework</groupId>
+                <artifactId>cloud-apollo</artifactId>
+                <version>${cloud-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gemini.cloud.framework</groupId>
                 <artifactId>cloud-web</artifactId>
                 <version>${cloud-framework.version}</version>
             </dependency>
@@ -94,6 +100,11 @@
                 <version>${cloud-framework.version}</version>
             </dependency>
             <!--第三方模块-->
+            <dependency>
+                <groupId>com.ctrip.framework.apollo</groupId>
+                <artifactId>apollo-client</artifactId>
+                <version>${apollo.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>

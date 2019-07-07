@@ -15,12 +15,12 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>cloud-core-web-example</module>
+        <module>cloud-web-example</module>
         <module>cloud-mybatis-example</module>
         <module>cloud-redis-example</module>
         <module>cloud-mq-example/receive</module>
         <module>cloud-mq-example/sender</module>
-        <module>cloud-web-flux-example</module>
+        <module>cloud-apollo-example</module>
     </modules>
 
     <dependencies>

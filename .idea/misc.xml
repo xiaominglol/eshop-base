@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/eureka/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-framework-example/cloud-core-web-example/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-framework-example/cloud-mybatis-example/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-framework-example/pom.xml" />
       </list>
     </option>
   </component>

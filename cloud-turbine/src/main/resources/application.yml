@@ -1,7 +1,10 @@
 server:
-  port: 4001
+  port: 1008
+spring:
+  application:
+    name: Framework-Turbine-Server
 turbine:
   #需要监控的微服务名称
-  app-config: core-example-server
+  app-config: web-example-server
   #待测试
   cluster-name-expression: "'default'"

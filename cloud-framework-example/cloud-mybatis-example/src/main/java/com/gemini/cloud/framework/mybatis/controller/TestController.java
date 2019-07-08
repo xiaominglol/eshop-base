@@ -13,11 +13,19 @@ public class TestController {
     @Value("${cloud.name}")
     private String cloudName;
 
-    @GetMapping("test")
-    public Message test() {
+    @GetMapping("/risk/onlineCheck.do")
+    public String test(String param) {
         Test test = new Test();
         test.setCloudId(cloudId);
         test.setCloudName(cloudName);
-        return Message.success(test);
+        return "onlineCheck-1-"+param;
+    }
+
+    @GetMapping("/callBack/riskCallBack.do")
+    public String test1(String param) {
+        Test test = new Test();
+        test.setCloudId(cloudId);
+        test.setCloudName(cloudName);
+        return "callback-1-"+param;
     }
 }

@@ -20,4 +20,20 @@ public class TestController {
         test.setCloudName(cloudName);
         return Message.success(test);
     }
+
+    @GetMapping("/risk/onlineCheck.do")
+    public String test3(String param) {
+        Test test = new Test();
+        test.setCloudId(cloudId);
+        test.setCloudName(cloudName);
+        return "onlineCheck-2-"+param;
+    }
+
+    @GetMapping("/callBack/riskCallBack.do")
+    public String test1(String param) {
+        Test test = new Test();
+        test.setCloudId(cloudId);
+        test.setCloudName(cloudName);
+        return "callback-2-"+param;
+    }
 }

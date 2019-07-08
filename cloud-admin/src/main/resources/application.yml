@@ -1,2 +1,5 @@
 server:
-  port: 6001
+  port: 1010
+spring:
+  application:
+    name: Framework-Admin-Server

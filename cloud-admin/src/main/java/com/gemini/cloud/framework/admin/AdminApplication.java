@@ -1,7 +1,7 @@
 package com.gemini.cloud.framework.admin;
 
-import com.gemini.cloud.framework.core.CoreApplication;
-import com.gemini.cloud.framework.core.exception.CloudCoreException;
+import com.gemini.cloud.framework.web.CoreApplication;
+import com.gemini.cloud.framework.web.exception.CloudCoreException;
 import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;

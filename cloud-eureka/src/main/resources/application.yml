@@ -1,11 +1,13 @@
 spring:
   profiles:
-    active: eureka2001
+    active: cluster1
+  application:
+    name: Framework-Eureka-Server
   #开启用户认证
 #  security:
 #    user:
-#      name: eurekaadmin
-#      password: 123456
+#      name: eureka
+#      password: eureka
 eureka:
 #  server:
     #关闭自我保护
@@ -18,30 +20,30 @@ eureka:
     fetch-registry: true
     #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址，多个地址可使用“，”分割。
     service-url:
-      defaultZone: http://localhost:2001/eureka/,http://localhost:2002/eureka/
+      defaultZone: http://localhost:1006/eureka/,http://localhost:1007/eureka/
   instance:
     #自定义主机映射名称
-    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
     #表示将自己的IP注册到Eureka Server
     prefer-ip-address: true
     #hostname: ${spring.cloud.client.ip-address}
 ---
 spring:
-  profiles: eureka2001
+  profiles: cluster1
 server:
-  port: 2001
+  port: 1006
 eureka:
   instance:
     #Eureka Server的实例名称,注意：集群环境不能有一样的名称
-    hostname: eureka2001.com
+    hostname: cluster1
 ---
 spring:
-  profiles: eureka2002
+  profiles: cluster2
 server:
-  port: 2002
+  port: 1007
 eureka:
   instance:
     #Eureka Server的实例名称,注意：集群环境不能有一样的名称
-    hostname: eureka2002.com
+    hostname: cluster2
 
 

@@ -1,8 +1,7 @@
 package com.gemini.cloud.framework.turbine;
 
-import com.gemini.cloud.framework.core.CoreApplication;
-import com.gemini.cloud.framework.core.exception.CloudCoreException;
-import org.springframework.boot.SpringApplication;
+import com.gemini.cloud.framework.web.CoreApplication;
+import com.gemini.cloud.framework.web.exception.CloudCoreException;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;

@@ -36,6 +36,7 @@
         <module>cloud-swagger</module>
         <module>cloud-sms</module>
         <module>cloud-activity</module>
+        <module>cloud-apollo</module>
     </modules>
 
     <dependencies>

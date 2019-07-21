@@ -1,4 +1,4 @@
-package com.gemini.cloud.framework.redis.config;
+package com.gemini.cloud.framework.mybatis.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.mybatis.spring.annotation.MapperScan;

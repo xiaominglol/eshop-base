@@ -4,10 +4,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.gemini.cloud.framework</groupId>
-    <artifactId>cloud-dependencies</artifactId>
+    <groupId>com.gemini.boot.framework</groupId>
+    <artifactId>boot-framework</artifactId>
     <version>2.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+
+    <modules>
+        <module>boot-core</module>
+        <module>boot-web</module>
+        <module>boot-mybatis</module>
+        <module>boot-redis</module>
+        <module>boot-quartz</module>
+        <module>boot-mail</module>
+        <module>boot-activity</module>
+        <module>boot-sms</module>
+        <module>boot-swagger</module>
+    </modules>
 
     <properties>
         <java.version>1.8</java.version>
@@ -18,8 +30,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!--自定义版本-->
-        <cloud-framework.version>2.0.0-SNAPSHOT</cloud-framework.version>
-        <cloud-business.version>2.0.0-SNAPSHOT</cloud-business.version>
+        <boot-framework.version>2.0.0-SNAPSHOT</boot-framework.version>
 
         <!--框架版本-->
         <spring-boot.version>2.1.5.RELEASE</spring-boot.version>
@@ -54,57 +65,30 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-dependencies</artifactId>
-                <version>${spring-boot-admin.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
             <!--自定义模块-->
             <dependency>
-                <groupId>com.gemini.cloud.framework</groupId>
-                <artifactId>cloud-core</artifactId>
-                <version>${cloud-framework.version}</version>
+                <groupId>com.gemini.boot.framework</groupId>
+                <artifactId>boot-core</artifactId>
+                <version>${boot-framework.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.gemini.cloud.framework</groupId>
-                <artifactId>cloud-apollo</artifactId>
-                <version>${cloud-framework.version}</version>
+                <groupId>com.gemini.boot.framework</groupId>
+                <artifactId>boot-web</artifactId>
+                <version>${boot-framework.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.gemini.cloud.framework</groupId>
-                <artifactId>cloud-web</artifactId>
-                <version>${cloud-framework.version}</version>
+                <groupId>com.gemini.boot.framework</groupId>
+                <artifactId>boot-mybatis</artifactId>
+                <version>${boot-framework.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.gemini.cloud.framework</groupId>
-                <artifactId>cloud-mybatis</artifactId>
-                <version>${cloud-framework.version}</version>
+                <groupId>com.gemini.boot.framework</groupId>
+                <artifactId>boot-redis</artifactId>
+                <version>${boot-framework.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.gemini.cloud.framework</groupId>
-                <artifactId>cloud-redis</artifactId>
-                <version>${cloud-framework.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.gemini.cloud.framework</groupId>
-                <artifactId>cloud-mq</artifactId>
-                <version>${cloud-framework.version}</version>
-            </dependency>
+
+
             <!--第三方模块-->
-            <dependency>
-                <groupId>com.ctrip.framework.apollo</groupId>
-                <artifactId>apollo-client</artifactId>
-                <version>${apollo.version}</version>
-            </dependency>
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>

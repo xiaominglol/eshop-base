@@ -1,55 +1,33 @@
-# common-framework  公共框架
+# gemini-framework
 
-包名：com.gemini.cloud.framework
-
-> 核心基础工程
-
-cloud-dependencies  核心依赖模块        已完成
-
-cloud-core          核心模块            已完成
-
-> 核心框架工程
-
-cloud-eureka        服务注册中心        已完成               1006，1007
-
-cloud-config        配置中心            暂时用apollo代替
-
-cloud-config-repo   配置管理            暂时用apollo代替
-
-cloud-apollo        配置中心                                 portal:1001，config:1002，1003,admin:1004,1005
-
-cloud-gateway       路由网关            已完成               
-
-cloud-turbine       服务监控            已完成               1008
-
-cloud-zipkin        服务跟踪            已完成(已改为docker启动)    1009
-
-cloud-admin         Admin工程           已完成               1010
-
-cloud-oauth2        鉴权工程                                 1011
-
-cloud-portal        Cloud管理界面                            1000
-
-> 核心业务工程
-
-cloud-web           Web工程             已完成
-
-cloud-mybatis       mybatis工程         已完成
-
-cloud-redis         缓存工程            已完成
-
-cloud-mq            消息队列工程        已完成
-
-cloud-es            搜索工程
-
-cloud-activity      工作流工程
-
-cloud-mail          邮件模块
-
-cloud-quartz        定时任务模块
-
-cloud-sms           短信模块
-
-cloud-swagger       接口模块
-
-cloud-shiro         权限模块
+```
+├─boot-framework
+│  ├─boot-core      boot核心    已完成
+│  ├─boot-web       web         已完成
+│  ├─boot-mybatis   orm         已完成
+│  └─boot-reids     cache       已完成
+│  └─boot-quartz    timer       已完成
+│  └─boot-mail      mail        已完成
+│  └─boot-activity  workflow    已完成
+│  └─boot-sms       message     已完成
+│  └─boot-swagger   interface   已完成
+├─cloud-framework
+│  ├─cloud-core     cloud核心   已完成
+│  │  ├─依赖boot-core
+│  ├─cloud-service  cloud服务   已完成
+│  │  ├─依赖boot-web
+│  │  ├─依赖boot-mybatis
+│  │  ├─依赖boot-redis
+│  │  ├─依赖eureka-client
+│  ├─cloud-facade   cloud门面   已完成
+│  │  ├─依赖openFeign
+│  ├─cloud-eureka   服务注册中心  已完成
+│  ├─cloud-apollo   配置中心      已完成
+│  ├─cloud-turbine  服务监控      已完成
+│  ├─cloud-zipkin   服务跟踪      已完成
+│  ├─cloud-gateway  服务网关      已完成
+│  ├─cloud-admin    admin服务     已完成
+│  ├─cloud-oauth2   鉴权中心      已完成
+│  ├─cloud-mq       消息队列      已完成
+│  ├─cloud-es       es储存        已完成
+```

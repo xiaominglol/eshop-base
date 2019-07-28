@@ -41,7 +41,7 @@
         <apollo.version>1.4.0</apollo.version>
         <mybatis.version>2.0.1</mybatis.version>
         <mybatis-plus.version>3.1.1</mybatis-plus.version>
-        <druid.version>1.1.17</druid.version>
+        <druid.version>1.1.18</druid.version>
         <p6spy.version>3.8.1</p6spy.version>
         <redisson.version>3.11.0</redisson.version>
         <!-- 版本管理工具 -->

@@ -1,7 +1,7 @@
-package com.gemini.cloud.framework.core.resources;
+package com.gemini.boot.framework.core.resources;
 
-import com.gemini.cloud.framework.core.exception.CloudCoreException;
-import com.gemini.cloud.framework.core.resources.impl.SpringPatternPatResourceLoaderResolver;
+import com.gemini.boot.framework.core.exception.CloudCoreException;
+import com.gemini.boot.framework.core.resources.impl.SpringPatternPatResourceLoaderResolver;
 import org.springframework.core.io.Resource;
 
 import java.util.List;

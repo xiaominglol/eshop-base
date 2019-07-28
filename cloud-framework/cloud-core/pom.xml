@@ -6,24 +6,19 @@
         <artifactId>cloud-framework</artifactId>
         <groupId>com.gemini.cloud.framework</groupId>
         <version>2.0.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-oauth2</artifactId>
+    <artifactId>cloud-core</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>com.gemini.cloud.framework</groupId>
-            <artifactId>cloud-core</artifactId>
+            <groupId>com.gemini.boot.framework</groupId>
+            <artifactId>boot-core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-oauth2</artifactId>
+            <artifactId>spring-cloud-starter</artifactId>
         </dependency>
     </dependencies>
 </project>

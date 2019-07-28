@@ -1,4 +1,4 @@
-package com.gemini.cloud.framework.core.exception;
+package com.gemini.boot.framework.core.exception;
 
 /**
  * cloud-web-throwable 异常

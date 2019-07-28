@@ -1,6 +1,6 @@
-package com.gemini.cloud.framework.core.config;
+package com.gemini.boot.framework.core.config;
 
-import com.gemini.cloud.framework.core.exception.CloudCoreException;
+import com.gemini.boot.framework.core.exception.CloudCoreException;
 import org.springframework.core.io.Resource;
 
 import java.util.List;

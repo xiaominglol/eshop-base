@@ -1,7 +1,7 @@
-package com.gemini.cloud.framework.core.resources.impl;
+package com.gemini.boot.framework.core.resources.impl;
 
-import com.gemini.cloud.framework.core.exception.CloudCoreException;
-import com.gemini.cloud.framework.core.resources.ResourceLoaderResolver;
+import com.gemini.boot.framework.core.exception.CloudCoreException;
+import com.gemini.boot.framework.core.resources.ResourceLoaderResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;

@@ -1,4 +1,4 @@
-//package com.gemini.cloud.framework.redis.config;
+//package com.gemini.boot.framework.mybatis.config;
 //
 //import com.alibaba.druid.pool.DruidDataSource;
 //import com.alibaba.druid.support.http.StatViewServlet;
@@ -28,7 +28,7 @@
 //     *
 //     * @return
 //     */
-//    @ConfigurationProperties(prefix = "spring.datasource")
+//    @ConfigurationProperties(prefix = "spring.datasource.druid")
 //    @Bean
 //    public DataSource dataSource() {
 //        return new DruidDataSource();
@@ -42,8 +42,8 @@
 //     */
 //    @Bean
 //    public ServletRegistrationBean statViewServlet() {
-//        ServletRegistrationBean bean = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
-//        Map<String, String> initParams = new HashMap<>();
+//        ServletRegistrationBean bean = new ServletRegistrationBean();
+//        Map<String, String> initParams = new HashMap<>(5);
 //        // 账号
 //        initParams.put("loginUsername", "admin");
 //        // 密码
@@ -67,8 +67,8 @@
 //    @Bean
 //    public FilterRegistrationBean webStatFilter() {
 //        FilterRegistrationBean bean = new FilterRegistrationBean();
-//        bean.setFilter(new WebStatFilter());
-//        Map<String, String> initParams = new HashMap<>();
+////        bean.setFilter(new WebStatFilter());
+//        Map<String, String> initParams = new HashMap<>(1);
 //        // 忽略格式
 //        initParams.put("exclusions", "*.js,*.css,*.jpg,*.gif,*.png,*.ico,/druid/*");
 //        bean.setInitParameters(initParams);

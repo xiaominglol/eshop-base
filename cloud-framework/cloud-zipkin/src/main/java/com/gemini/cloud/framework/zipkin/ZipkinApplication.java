@@ -1,7 +1,7 @@
 package com.gemini.cloud.framework.zipkin;
 
-import com.gemini.cloud.framework.web.CoreApplication;
-import com.gemini.cloud.framework.web.exception.CloudCoreException;
+import com.gemini.boot.framework.core.CoreApplication;
+import com.gemini.boot.framework.core.exception.CloudCoreException;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import zipkin2.server.internal.EnableZipkinServer;

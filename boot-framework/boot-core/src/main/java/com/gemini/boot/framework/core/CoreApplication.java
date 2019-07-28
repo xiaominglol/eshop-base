@@ -1,9 +1,9 @@
-package com.gemini.cloud.framework.core;
+package com.gemini.boot.framework.core;
 
-import com.gemini.cloud.framework.core.config.ConfigPropertiesResolver;
-import com.gemini.cloud.framework.core.config.impl.ConfigPropertiesResolverImpl;
-import com.gemini.cloud.framework.core.exception.CloudCoreException;
-import com.gemini.cloud.framework.core.resources.ResourceLoaderResolver;
+import com.gemini.boot.framework.core.config.ConfigPropertiesResolver;
+import com.gemini.boot.framework.core.config.impl.ConfigPropertiesResolverImpl;
+import com.gemini.boot.framework.core.exception.CloudCoreException;
+import com.gemini.boot.framework.core.resources.ResourceLoaderResolver;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;

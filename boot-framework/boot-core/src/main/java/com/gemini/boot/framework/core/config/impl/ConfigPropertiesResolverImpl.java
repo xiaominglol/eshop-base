@@ -1,10 +1,10 @@
-package com.gemini.cloud.framework.core.config.impl;
+package com.gemini.boot.framework.core.config.impl;
 
 import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.fasterxml.jackson.dataformat.yaml.YAMLParser;
-import com.gemini.cloud.framework.core.config.ConfigPropertiesResolver;
-import com.gemini.cloud.framework.core.exception.CloudCoreException;
+import com.gemini.boot.framework.core.config.ConfigPropertiesResolver;
+import com.gemini.boot.framework.core.exception.CloudCoreException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
@@ -32,7 +32,7 @@ public class ConfigPropertiesResolverImpl implements ConfigPropertiesResolver {
                 throw new CloudCoreException("yml转换为properties error", e);
             }
         }
-        LOG.info("cloud-*.xml:"+properties.toString());
+        LOG.info("application-cloud-*.xml:"+properties.toString());
         LOG.info("》》》yml转换为properties end《《《");
         return properties;
     }

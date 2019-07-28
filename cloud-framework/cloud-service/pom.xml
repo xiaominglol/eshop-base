@@ -16,15 +16,23 @@
         <!--自定义模块-->
         <dependency>
             <groupId>com.gemini.cloud.framework</groupId>
-            <artifactId>cloud-web</artifactId>
+            <artifactId>cloud-core</artifactId>
         </dependency>
         <dependency>
             <groupId>com.gemini.cloud.framework</groupId>
-            <artifactId>cloud-mybatis</artifactId>
+            <artifactId>cloud-apollo</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.gemini.cloud.framework</groupId>
-            <artifactId>cloud-redis</artifactId>
+            <groupId>com.gemini.boot.framework</groupId>
+            <artifactId>boot-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gemini.boot.framework</groupId>
+            <artifactId>boot-mybatis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gemini.boot.framework</groupId>
+            <artifactId>boot-redis</artifactId>
         </dependency>
         <!--框架模块-->
         <!--eureka客户端-->

@@ -23,6 +23,7 @@
         <module>cloud-es</module>
         <module>cloud-service</module>
         <module>cloud-facade</module>
+        <module>cloud-core</module>
     </modules>
 
     <properties>
@@ -88,7 +89,22 @@
             <!--自定义模块-->
             <dependency>
                 <groupId>com.gemini.cloud.framework</groupId>
+                <artifactId>cloud-core</artifactId>
+                <version>${cloud-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gemini.cloud.framework</groupId>
                 <artifactId>cloud-apollo</artifactId>
+                <version>${cloud-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gemini.cloud.framework</groupId>
+                <artifactId>cloud-service</artifactId>
+                <version>${cloud-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gemini.cloud.framework</groupId>
+                <artifactId>cloud-facade</artifactId>
                 <version>${cloud-framework.version}</version>
             </dependency>
             <dependency>

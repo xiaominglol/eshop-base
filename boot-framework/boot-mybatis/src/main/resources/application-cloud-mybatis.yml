@@ -28,6 +28,23 @@ spring:
 #          db-type: mysql
 #        wall:
 #          db-type: mysql
+
+#mybatis-plus:
+#  global-config:
+#    db-config:
+#      #主键类型：AUTO（数据库ID自增），NONE（），INPUT（用户输入ID），ID_WORKER（全局唯一ID (数字类型)）, UUID（全局唯一ID UUID），ID_WORKER_STR（全局唯一ID (字符类型)）
+#      id-type: AUTO
+##  mapper-locations: classpath:/com/gemini/admin/*/mapper/*.xml
+#  configuration:
+#    # 开启驼峰命名匹配
+#    map-underscore-to-camel-case: true
+#    # 开启懒加载
+#    lazyLoadingEnabled: true
+#    aggressiveLazyLoading: false
+#    # 开启缓存
+#    cache-enabled: false
+#    #配置JdbcTypeForNull, oracle数据库必须配置
+#    jdbc-type-for-null: 'null'
 uid:
   timeBits: 37
   workerBits: 17

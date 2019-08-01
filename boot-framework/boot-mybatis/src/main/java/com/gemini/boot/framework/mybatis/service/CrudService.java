@@ -26,26 +26,31 @@ import java.util.Map;
 @EnableAsync
 public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<Po>> {
 
+
     /**
      * 獲取uid
+     *
      * @return Long
      */
     Long uid();
 
     /**
      * 獲取log
+     *
      * @return Logger
      */
     Logger log();
 
     /**
      * 獲取mapper
+     *
      * @return Mapper
      */
     Mapper mapper();
 
     /**
      * 獲取Pojo的class
+     *
      * @return Class<Pojo>
      */
     default Class<Pojo> pojo() {
@@ -54,25 +59,29 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 獲取Po的class
+     *
      * @return Class<Po>
      */
     default Class<Po> po() {
         return (Class<Po>) BeanUtils.types(this.getClass())[1];
     }
 
+    ;
+
     /**
      * 新增之前執行的邏輯
+     *
      * @param pojo
      * @param po
      */
     default void insertBefore(Pojo pojo, Po po) {
         BeanUtils.invoke(po, "setId", uid());
-        BeanUtils.invoke(po, "setState", StateEnum.Enable);
-        BeanUtils.invoke(po, "setModifyTime", LocalDateTime.now());
+        BeanUtils.invoke(po, "setModifyDate", System.currentTimeMillis());
     }
 
     /**
      * 新增之后執行的邏輯
+     *
      * @param pojo
      * @param po
      */
@@ -81,16 +90,17 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 更新之前執行的邏輯
+     *
      * @param pojo
      * @param po
      */
     default void updateBefore(Pojo pojo, Po po) {
         BeanUtils.invoke(po, "setModifyDate", System.currentTimeMillis());
-        BeanUtils.invoke(po, "setModifyType", ModifyTypeEnum.Update.name());
     }
 
     /**
      * 更新之后執行的邏輯
+     *
      * @param pojo
      * @param po
      */
@@ -99,6 +109,7 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 刪除之前執行的邏輯
+     *
      * @param ids 主鍵ID
      */
     default void deleteBefore(Long... ids) {
@@ -106,6 +117,7 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 刪除之前執行的邏輯
+     *
      * @param ids 主鍵ID
      */
     default void deleteAfter(Long... ids) {
@@ -113,6 +125,7 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 复制po为pojo
+     *
      * @param po
      * @return Pojo
      */
@@ -122,6 +135,7 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 复制pojo为po
+     *
      * @param pojo
      * @return Po
      */
@@ -131,6 +145,7 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 复制pojo列表为po列表
+     *
      * @param list，List<Po>
      * @return List<Pojo>
      */
@@ -140,6 +155,7 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 复制pojo分页为po分页
+     *
      * @param page，IPage<Po>
      * @return IPage<Pojo>
      */
@@ -149,27 +165,31 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 獲取wrapper
+     *
      * @return QueryWrapper<Po>
      */
     default QueryWrapper<Po> wrapper() {
-        return new QueryWrapper<>();
+        return new QueryWrapper<Po>();
     }
+
+    ;
 
     /**
      * 根據pojo獲取wrapper
+     *
      * @param pojo
      * @return QueryWrapper<Po>
      */
     default QueryWrapper<Po> wrapper(Pojo pojo) {
         QueryWrapper<Po> wrapper = wrapper();
         try {
-            List<String> ascs = (List<String>) BeanUtils.invoke(pojo, "getAscs");
-            List<String> descs = (List<String>) BeanUtils.invoke(pojo, "getDescs");
-            if(ascs != null) {
-                wrapper.orderByAsc(StringUtils.toUnderScoreCase(ascs).toArray(new String[] {}));
+            String ascs = (String) BeanUtils.invoke(pojo, "getAscs");
+            String descs = (String) BeanUtils.invoke(pojo, "getDescs");
+            if (ascs != null) {
+                wrapper.orderByAsc(StringUtils.toUnderScoreCase(ascs).split(","));
             }
-            if(descs != null) {
-                wrapper.orderByDesc(StringUtils.toUnderScoreCase(descs).toArray(new String[] {}));
+            if (descs != null) {
+                wrapper.orderByDesc(StringUtils.toUnderScoreCase(descs).split(","));
             }
         } finally {
             return wrapper;
@@ -178,20 +198,21 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 根據map獲取wrapper
-     * @param map  字段名為key，字段值為value
+     *
+     * @param map 字段名為key，字段值為value
      * @return QueryWrapper<Po>
      */
     default QueryWrapper<Po> wrapper(Map<String, Object> map) {
         QueryWrapper<Po> wrapper = wrapper();
-        if(map != null) {
-            for(String key : map.keySet()) {
+        if (map != null) {
+            for (String key : map.keySet()) {
                 wrapper.eq(StringUtils.toUnderScoreCase(key), map.get(key));
             }
-            if(map.get("ascs") != null) {
-                wrapper.orderByAsc(StringUtils.toUnderScoreCase((List<String>) map.get("ascs")).toArray(new String[] {}));
+            if (map.get("ascs") != null) {
+                wrapper.orderByAsc(StringUtils.toUnderScoreCase((String) map.get("ascs")).split(","));
             }
-            if(map.get("descs") != null) {
-                wrapper.orderByDesc(StringUtils.toUnderScoreCase((List<String>) map.get("descs")).toArray(new String[] {}));
+            if (map.get("descs") != null) {
+                wrapper.orderByDesc(StringUtils.toUnderScoreCase((String) map.get("descs")).split(","));
             }
         }
         return wrapper;
@@ -199,7 +220,8 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 根據字段名、字段值獲取wrapper
-     * @param name 字段名
+     *
+     * @param name   字段名
      * @param values 字段值
      * @return QueryWrapper<Po>
      */
@@ -209,7 +231,8 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 根據字段名、字段值獲取wrapper
-     * @param name 字段名
+     *
+     * @param name   字段名
      * @param values 字段值
      * @return QueryWrapper<Po>
      */
@@ -219,8 +242,9 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 根據邏輯名稱、字段名、字段值獲取wrapper
+     *
      * @param logic 邏輯名稱
-     * @param name 字段名
+     * @param name  字段名
      * @param value 字段值
      * @return QueryWrapper<Po>
      */
@@ -232,6 +256,7 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 插入記錄
+     *
      * @param pojo
      */
     @Async
@@ -245,12 +270,13 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 批量插入記錄
+     *
      * @param list，List<Pojo>
      */
     @Async
     default void insert(List<Pojo> list) {
-        if(list != null) {
-            for(Pojo pojo : list) {
+        if (list != null) {
+            for (Pojo pojo : list) {
                 insert(pojo);
             }
         }
@@ -258,6 +284,7 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 根據ID更新記錄
+     *
      * @param pojo
      */
     @Async
@@ -271,12 +298,13 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 批量更新記錄
+     *
      * @param list，List<Pojo>
      */
     @Async
     default void update(List<Pojo> list) {
-        if(list != null) {
-            for(Pojo pojo : list) {
+        if (list != null) {
+            for (Pojo pojo : list) {
                 update(pojo);
             }
         }
@@ -284,6 +312,7 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 根據ID刪除記錄
+     *
      * @param ids 主鍵ID
      */
     @Async
@@ -296,6 +325,7 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 根據pojo刪除記錄
+     *
      * @param pojo
      */
     @Async
@@ -306,6 +336,7 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 根據map刪除記錄
+     *
      * @param map 字段名為key，字段值為value
      */
     @Async
@@ -316,29 +347,32 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 根據wrapper刪除記錄
+     *
      * @param wrapper，QueryWrapper<Po>
      */
     @Async
-    default  void delete(QueryWrapper<Po> wrapper) {
+    default void delete(QueryWrapper<Po> wrapper) {
         log().error("删除数据：{}", wrapper);
         mapper().delete(wrapper);
     }
 
     /**
      * 根據字段名、字段值刪除記錄
-     * @param name 字段名
+     *
+     * @param name   字段名
      * @param values 字段值
      */
     @Async
-    default  void delete(String name, Object... values) {
+    default void delete(String name, Object... values) {
         log().error("删除数据：{}，{}", name, values);
-        mapper().delete( wrapper(name, values));
+        mapper().delete(wrapper(name, values));
     }
 
     /**
      * 根據ID查詢記錄
+     *
      * @param id 主鍵ID
-     * @return Pojo，異常返回null
+     * @return Pojo
      */
     default Pojo get(Long id) {
         Po po = mapper().selectById(id);
@@ -348,7 +382,8 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 查詢所有記錄列表
-     * @return List<T>>，異常返回null
+     *
+     * @return List<T>>
      */
     default List<Pojo> list() {
         List<Po> poList = mapper().selectList(new QueryWrapper<Po>());
@@ -358,8 +393,9 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 根據pojo查詢記錄列表
+     *
      * @param pojo
-     * @return List<Pojo>，異常返回null
+     * @return List<Pojo>
      */
     default List<Pojo> list(Pojo pojo) {
         List<Po> poList = mapper().selectList(wrapper(pojo));
@@ -369,8 +405,9 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 根據map查詢記錄列表
+     *
      * @param map 字段名為key，字段值為value
-     * @return List<Pojo>，異常返回null
+     * @return List<Pojo>
      */
     default List<Pojo> list(Map<String, Object> map) {
         List<Po> poList = mapper().selectList(wrapper(map));
@@ -379,13 +416,26 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
     }
 
     /**
+     * 根據wrapper查詢記錄列表
+     *
+     * @param wrapper
+     * @return List<Pojo>
+     */
+    default List<Pojo> list(QueryWrapper<Po> wrapper) {
+        List<Po> poList = mapper().selectList(wrapper);
+        List<Pojo> pojoList = copy(poList);
+        return pojoList;
+    }
+
+    /**
      * 根據更新時間查詢記錄列表
+     *
      * @param modifyDateMin 更新時間搓最小值
      * @param modifyDateMax 更新時間錯最大值
-     * @return List<Pojo>>，異常返回null
+     * @return List<Pojo>>
      */
     default List<Pojo> list(Long modifyDateMin, Long modifyDateMax) {
-        QueryWrapper wrapper = wrapper().between("modify_daate", modifyDateMin, modifyDateMax);
+        QueryWrapper wrapper = wrapper().between("modify_date", modifyDateMin, modifyDateMax);
         List<Po> poList = mapper().selectList(wrapper);
         List<Pojo> pojoList = copy(poList);
         return pojoList;
@@ -393,12 +443,13 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 查詢記錄分頁
+     *
      * @param pojo
-     * @return IPage<Pojo>，異常返回null
+     * @param current 第幾頁
+     * @param size    一頁幾條記錄
+     * @return IPage<Pojo>
      */
-    default IPage<Pojo> page(Pojo pojo) {
-        Long current = (Long) BeanUtils.invoke(pojo, "getCurrent");
-        Long size = (Long) BeanUtils.invoke(pojo, "getSize");
+    default IPage<Pojo> page(Pojo pojo, Long current, Long size) {
         Page<Po> page = new Page<>(current == null ? 1L : current, size == null ? 10L : size);
         IPage<Po> poPage = mapper().selectPage(page, wrapper(pojo));
         IPage<Pojo> pojoPage = copy(poPage);
@@ -407,8 +458,9 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
 
     /**
      * 根據map查詢記錄分頁
+     *
      * @param map 字段名為key，字段值為value
-     * @return IPage<Pojo>，異常返回null
+     * @return IPage<Pojo>
      */
     default IPage<Pojo> page(Map<String, Object> map) {
         Long current = (Long) map.get("current");

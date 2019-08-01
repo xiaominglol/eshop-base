@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
  * @author 小明不读书
  * @data 2018-08-02
  */
-//@MapperScan({"com.gemini.*.domain.mapper","com.gemini.*.domain.*.mapper"})
 @Configuration
 public class MybatisPlusConfig {
     /**

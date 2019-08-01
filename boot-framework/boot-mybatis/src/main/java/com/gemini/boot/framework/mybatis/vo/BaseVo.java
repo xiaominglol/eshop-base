@@ -1,4 +1,4 @@
-package com.gemini.boot.framework.mybatis.po;
+package com.gemini.boot.framework.mybatis.vo;
 
 import lombok.Data;
 
@@ -11,7 +11,7 @@ import java.util.Date;
  * @author wenge.cai
  */
 @Data
-public class BasePo implements Serializable {
+public class BaseVo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.uepay.corebusiness.risk.code.generator.mapper.DictMapper">
+
+	<resultMap id="resultMap" type="com.uepay.corebusiness.risk.code.generator.domain.Dict">
+		<id column="tableName" property="tableName" javaType="String"/>
+		<id column="id" property="id" javaType="Long"/>
+		<result column="pid" property="pid" javaType="Long"/>
+		<result column="code" property="code" javaType="String"/>
+		<result column="name_cn" property="nameCn" javaType="String"/>
+		<result column="name_en" property="nameEn" javaType="String"/>
+		<result column="description_cn" property="descriptionCn" javaType="String"/>
+		<result column="description_en" property="descriptionEn" javaType="String"/>
+		<result column="modify_date" property="modifyDate" javaType="Long"/>
+		<result column="modify_user" property="modifyUser" javaType="Long"/>
+		<result column="modify_type" property="modifyType" javaType="String"/>
+		<result column="modify_access_id" property="modifyAccessId" javaType="Long"/>
+		<collection property="children" select="children" column="tableName=tableName, id=id"></collection>
+	</resultMap>
+
+	<select id="find" resultMap="resultMap">
+		select
+			#{tableName} tableName,
+			id,
+			pid,
+			code,
+			name_cn,
+			name_en,
+			description_cn,
+			description_en
+		from ${tableName}
+		where pid is null
+	</select>
+
+	<select id="children" resultMap="resultMap">
+		select
+			#{tableName} tableName,
+			id,
+			pid,
+			code,
+			name_cn,
+			name_en,
+			description_cn,
+			description_en
+		from ${tableName} d
+		where d.pid = ${id}
+	</select>
+</mapper>

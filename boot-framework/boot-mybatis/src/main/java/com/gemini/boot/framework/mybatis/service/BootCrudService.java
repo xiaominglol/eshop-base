@@ -10,10 +10,7 @@ import com.gemini.boot.framework.mybatis.utils.BeanUtils;
 import com.gemini.boot.framework.mybatis.utils.StringUtils;
 import org.slf4j.Logger;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.scheduling.annotation.EnableAsync;
-import sun.rmi.runtime.Log;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -46,7 +43,7 @@ public interface BootCrudService<Po extends BasePo, Mapper extends BaseMapper<Po
     Mapper mapper();
 
     default void insertBefore(Po po) {
-//        BeanUtils.invoke(po, "setId", uid());
+        BeanUtils.invoke(po, "setId", uid());
     }
 
     default Po getById(Long id){

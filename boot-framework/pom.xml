@@ -19,6 +19,7 @@
         <module>boot-activity</module>
         <module>boot-sms</module>
         <module>boot-swagger</module>
+        <module>boot-shiro</module>
     </modules>
 
     <properties>

@@ -46,6 +46,15 @@ public interface BootCrudService<Po extends BasePo, Mapper extends BaseMapper<Po
         BeanUtils.invoke(po, "setId", uid());
     }
 
+    default void insertAfter(Po po) {
+    }
+
+    default void updateAfter(Po po) {
+    }
+
+    default void deleteBefore(Long id) {
+    }
+
     default Po getById(Long id){
         return mapper().selectById(id);
     }
@@ -60,6 +69,7 @@ public interface BootCrudService<Po extends BasePo, Mapper extends BaseMapper<Po
 
         insertBefore(po);
         mapper().insert(po);
+        insertAfter(po);
     }
 
     @Async
@@ -76,6 +86,7 @@ public interface BootCrudService<Po extends BasePo, Mapper extends BaseMapper<Po
     default void update(Po po) {
         log().info("更新数据：{}", po);
         mapper().updateById(po);
+        updateAfter(po);
     }
 
     @Async
@@ -89,6 +100,7 @@ public interface BootCrudService<Po extends BasePo, Mapper extends BaseMapper<Po
     }
 
     default void deleteById(Long id) {
+        deleteBefore(id);
         mapper().deleteById(id);
     }
 

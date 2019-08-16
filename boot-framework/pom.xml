@@ -87,6 +87,11 @@
                 <artifactId>boot-redis</artifactId>
                 <version>${boot-framework.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.gemini.boot.framework</groupId>
+                <artifactId>boot-shiro</artifactId>
+                <version>${boot-framework.version}</version>
+            </dependency>
 
 
             <!--第三方模块-->
@@ -114,6 +119,11 @@
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson-spring-boot-starter</artifactId>
                 <version>${redisson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>${shiro.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba</groupId>

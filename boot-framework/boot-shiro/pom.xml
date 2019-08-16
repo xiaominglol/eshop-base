@@ -11,5 +11,10 @@
 
     <artifactId>boot-shiro</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+        </dependency>
+    </dependencies>
 </project>

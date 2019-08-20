@@ -3,12 +3,11 @@ package com.gemini.boot.framework.mybatis.vo;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * Po基類
  *
- * @author wenge.cai
+ * @author 小明不读书
  */
 @Data
 public class BaseVo implements Serializable {

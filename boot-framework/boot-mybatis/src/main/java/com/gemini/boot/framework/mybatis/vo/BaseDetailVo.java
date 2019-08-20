@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  * Po基類
- * @author wenge.cai
+ * @author 小明不读书
  */
 @Data
 public class BaseDetailVo implements Serializable {

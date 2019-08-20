@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
  * Service基類的实现
- * @author wenge.cai
+ * @author 小明不读书
  */
 @EnableAsync
 @Slf4j

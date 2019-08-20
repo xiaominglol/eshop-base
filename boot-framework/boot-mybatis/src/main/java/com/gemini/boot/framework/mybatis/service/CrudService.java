@@ -5,23 +5,19 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.gemini.boot.framework.mybatis.enums.LogicEnum;
-import com.gemini.boot.framework.mybatis.enums.ModifyTypeEnum;
-import com.gemini.boot.framework.mybatis.enums.StateEnum;
-import com.gemini.boot.framework.mybatis.utils.StringUtils;
 import com.gemini.boot.framework.mybatis.po.BasePo;
 import com.gemini.boot.framework.mybatis.utils.BeanUtils;
+import com.gemini.boot.framework.mybatis.utils.StringUtils;
 import org.slf4j.Logger;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.scheduling.annotation.EnableAsync;
 
-import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 /**
  * Service基類
- * @author wenge.cai
+ * @author 小明不读书
  */
 public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<Po>> {
 

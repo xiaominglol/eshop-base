@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 /**
  * ${table.title}
- * @author wenge.cai
+* @author 小明不读书
  */
 
 @FeignClient(contextId = "${table.domainName}Client", name = "business-risk-api-service", url = "http://192.168.200.127:7111")

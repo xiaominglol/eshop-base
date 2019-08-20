@@ -18,7 +18,7 @@ import java.util.Map;
 
 /**
  * Service基類
- * @author wenge.cai
+ * @author 小明不读书
  */
 @EnableAsync
 public interface CloudCrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<Po>> {

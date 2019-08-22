@@ -1,6 +1,6 @@
 package com.gemini.portal.module.sys.service;
 
-import com.gemini.portal.common.service.BootCrudService;
+import com.gemini.portal.common.service.BaseDetailService;
 import com.gemini.portal.module.sys.dto.${table.className}Dto;
 import com.gemini.portal.module.sys.mapper.${table.className}Mapper;
 import com.gemini.portal.module.sys.po.${table.className}Po;

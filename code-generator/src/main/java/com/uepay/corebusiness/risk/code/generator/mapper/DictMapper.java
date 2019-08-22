@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface DictMapper {
 
-   List<Dict> find(@Param("tableName") String tableName);
+    List<Dict> find(@Param("tableName") String tableName);
 
-   List<Dict> children(@Param("pid") Long tableName);
+    List<Dict> children(@Param("pid") Long tableName);
 }

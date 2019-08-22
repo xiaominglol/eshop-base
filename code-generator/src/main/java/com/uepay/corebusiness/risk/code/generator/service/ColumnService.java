@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ColumnService {
 
-	List<Column> find(@Param("tableName") String tableName);
+    List<Column> find(@Param("tableName") String tableName);
 
 }

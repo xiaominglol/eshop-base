@@ -32,6 +32,12 @@ spring:
 mybatis-plus:
   #  global-config:
   #    db-config:
+  #  AUTO: AUTO(0, “数据库ID自增”),
+  #  INPUT: INPUT(1, “用户输入ID”),
+  #  ID_WORKER: ID_WORKER(2, “全局唯一ID”),
+  #  UUID: UUID(3, “全局唯一ID”),
+  #  NONE: NONE(4, “该类型为未设置主键类型”),
+  #  ID_WORKER_STR: ID_WORKER_STR(5, “字符串全局唯一ID”);
   #      #主键类型：AUTO（数据库ID自增），NONE（），INPUT（用户输入ID），ID_WORKER（全局唯一ID (数字类型)）, UUID（全局唯一ID UUID），ID_WORKER_STR（全局唯一ID (字符类型)）
   #      id-type: AUTO
   mapper-locations: classpath:/mapper/*.xml

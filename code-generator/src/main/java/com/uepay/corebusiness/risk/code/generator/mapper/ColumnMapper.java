@@ -9,5 +9,5 @@ import java.util.List;
 @Mapper
 public interface ColumnMapper {
 
-   List<Column> find(@Param("tableName") String tableName);
+    List<Column> find(@Param("tableName") String tableName);
 }

@@ -11,11 +11,11 @@ import java.util.List;
 @Service
 public class ColumnServiceImpl implements ColumnService {
 
-	@Autowired
-	ColumnMapper columnMapper;
-	
-	public List<Column> find(String tableName) {
-		return columnMapper.find(tableName);
-	}
-	
+    @Autowired
+    ColumnMapper columnMapper;
+
+    public List<Column> find(String tableName) {
+        return columnMapper.find(tableName);
+    }
+
 }

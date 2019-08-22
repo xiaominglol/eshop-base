@@ -11,11 +11,11 @@ import java.util.List;
 @Service
 public class DictServiceImpl implements DictService {
 
-	@Autowired
-	DictMapper dictMapper;
-	
-	public List<Dict> find(String tableName) {
-		return dictMapper.find(tableName);
-	}
-	
+    @Autowired
+    DictMapper dictMapper;
+
+    public List<Dict> find(String tableName) {
+        return dictMapper.find(tableName);
+    }
+
 }

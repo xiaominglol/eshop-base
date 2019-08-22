@@ -5,10 +5,13 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.gemini.boot.framework.mybatis.entity.Dict;
 import com.gemini.boot.framework.mybatis.service.DictService;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class BeanUtils extends org.springframework.beans.BeanUtils {
 
@@ -21,7 +24,7 @@ public class BeanUtils extends org.springframework.beans.BeanUtils {
     public static void setDict(DictService dictService, Object target) {
         Dict dict = dictService.dict();
         String className = dictService.getClass().getName();
-        String name = className.substring(className.lastIndexOf(".") + 1, className.lastIndexOf("Enum"));//dictService.getClass().getName().replaceFirst("com.uepay.corebusiness.risk.base.enums.", "");
+        String name = className.substring(className.lastIndexOf(".") + 1, className.lastIndexOf("Enum"));
         invoke(target, "set" + name + "Id", dict.getId());
         invoke(target, "set" + name + "Code", dict.getCode());
         invoke(target, "set" + name + "Name", dict.getName());
@@ -72,6 +75,46 @@ public class BeanUtils extends org.springframework.beans.BeanUtils {
                 classes[i] = args[i].getClass();
             }
             return target.getClass().getMethod(methodName, classes).invoke(target, args);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    /**
+     * 获取对象的属性值
+     *
+     * @param object 对象
+     * @param fieldName 属性名
+     * @param <Type> 属性值类型
+     * @return 属性值
+     */
+    public static <Type> Type value(Object object, String fieldName) {
+        try {
+            Field field = object.getClass().getDeclaredField(fieldName);
+            field.setAccessible(true);
+            return (Type) field.get(object);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    /**
+     * 获取对象所有的属性值
+     *
+     * @param object
+     * @return Map<String, Object>
+     */
+    public static Map<String, Object> values(Object object) {
+        try {
+            Map<String, Object> map = new HashMap<>();
+            for (Field field : object.getClass().getDeclaredFields()) {
+                field.setAccessible(true);
+                Object value = field.get(object);
+                if (value != null) {
+                    map.put(field.getName(), value);
+                }
+            }
+            return map;
         } catch (Exception e) {
             return null;
         }

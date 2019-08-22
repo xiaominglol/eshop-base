@@ -7,15 +7,15 @@
 		<id column="id" property="id" javaType="Long"/>
 		<result column="pid" property="pid" javaType="Long"/>
 		<result column="code" property="code" javaType="String"/>
-		<result column="name_cn" property="nameCn" javaType="String"/>
-		<result column="name_en" property="nameEn" javaType="String"/>
-		<result column="description_cn" property="descriptionCn" javaType="String"/>
-		<result column="description_en" property="descriptionEn" javaType="String"/>
-		<result column="modify_date" property="modifyDate" javaType="Long"/>
-		<result column="modify_user" property="modifyUser" javaType="Long"/>
-		<result column="modify_type" property="modifyType" javaType="String"/>
-		<result column="modify_access_id" property="modifyAccessId" javaType="Long"/>
-		<collection property="children" select="children" column="tableName=tableName, id=id"></collection>
+        <result column="name" property="name" javaType="String"/>
+        <result column="description" property="description" javaType="String"/>
+        <result column="state_id" property="stateId" javaType="Long"/>
+        <result column="state_code" property="stateCode" javaType="String"/>
+        <result column="state_name" property="stateName" javaType="String"/>
+        <result column="modify_user_id" property="modifyUserId" javaType="Long"/>
+        <result column="modify_user_name" property="modifyUserName" javaType="String"/>
+        <result column="modify_time" property="modifyTime" javaType="java.sql.Timestamp"/>
+        <collection property="detailList" select="children" column="tableName=tableName, id=id"></collection>
 	</resultMap>
 
 	<select id="find" resultMap="resultMap">
@@ -24,10 +24,8 @@
 			id,
 			pid,
 			code,
-			name_cn,
-			name_en,
-			description_cn,
-			description_en
+			name,
+			description,
 		from ${tableName}
 		where pid is null
 	</select>
@@ -38,10 +36,8 @@
 			id,
 			pid,
 			code,
-			name_cn,
-			name_en,
-			description_cn,
-			description_en
+			name,
+			description,
 		from ${tableName} d
 		where d.pid = ${id}
 	</select>

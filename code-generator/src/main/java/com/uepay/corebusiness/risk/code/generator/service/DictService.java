@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface DictService {
 
-	List<Dict> find(@Param("tableName") String tableName);
+    List<Dict> find(@Param("tableName") String tableName);
 
 }

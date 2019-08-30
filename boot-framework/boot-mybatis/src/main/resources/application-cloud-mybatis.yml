@@ -1,5 +1,6 @@
 spring:
   datasource:
+    #    type: com.alibaba.druid.pool.DruidDataSource
     druid:
       #引入了p6spy模块后，需要指定db-type,不配置否则报错Caused by: java.lang.IllegalStateException: dbType not support : null, url jdbc:p6spy:mysql://localhost:3306/eshop_member?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       db-type: mysql

@@ -19,6 +19,7 @@
 │  │  ├─依赖boot-mybatis
 │  │  ├─依赖boot-redis
 │  │  ├─依赖eureka-client
+│  │  ├─依赖cloud-apollo
 │  ├─cloud-facade   cloud门面   已完成
 │  │  ├─依赖openFeign
 │  ├─cloud-eureka   服务注册中心  已完成

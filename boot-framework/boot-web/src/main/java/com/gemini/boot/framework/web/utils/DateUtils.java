@@ -3,6 +3,7 @@ package com.gemini.boot.framework.web.utils;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -84,7 +85,11 @@ public class DateUtils {
 
         String beforeHourForPast = getBeforeHourForPast(1);
         System.out.println(beforeHourForPast);
-
+        int[] i = {8, 4, 2, 1, 23, 344, 12};
+        Arrays.sort(i);
+        int[] j = new int[]{};
+        Arrays.copyOf(i, i.length);
+        System.out.printf("123", i.toString());
     }
 
 }

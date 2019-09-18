@@ -1,4 +1,4 @@
-package com.gemini.boot.framework.mybatis.entity;
+package com.gemini.boot.framework.web.entity;
 
 /**
  * 失败信息公共类

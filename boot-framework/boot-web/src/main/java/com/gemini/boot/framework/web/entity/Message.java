@@ -1,4 +1,4 @@
-package com.gemini.boot.framework.mybatis.entity;
+package com.gemini.boot.framework.web.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

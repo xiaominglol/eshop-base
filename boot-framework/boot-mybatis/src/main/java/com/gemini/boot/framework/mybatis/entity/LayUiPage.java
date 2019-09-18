@@ -1,9 +1,6 @@
 package com.gemini.boot.framework.mybatis.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
@@ -13,10 +10,7 @@ import java.io.Serializable;
  * @author 小明不读书
  * @date 2017-11-09
  */
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
-@Accessors(chain = true)
 public class LayUiPage implements Serializable {
 
     /**

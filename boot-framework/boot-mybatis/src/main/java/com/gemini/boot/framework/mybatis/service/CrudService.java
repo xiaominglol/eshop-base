@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.gemini.boot.framework.mybatis.enums.LogicEnum;
 import com.gemini.boot.framework.mybatis.po.BasePo;
 import com.gemini.boot.framework.mybatis.utils.BeanUtils;
 import com.gemini.boot.framework.mybatis.utils.StringUtils;
@@ -241,11 +240,11 @@ public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<
      * @param value 字段值
      * @return QueryWrapper<Po>
      */
-    default QueryWrapper<Po> wrapper(LogicEnum logic, String name, Object value) {
-        QueryWrapper<Po> wrapper = wrapper();
-        BeanUtils.invoke(wrapper, logic.toString(), StringUtils.toUnderScoreCase(name), value);
-        return wrapper;
-    }
+//    default QueryWrapper<Po> wrapper(LogicEnum logic, String name, Object value) {
+//        QueryWrapper<Po> wrapper = wrapper();
+//        BeanUtils.invoke(wrapper, logic.toString(), StringUtils.toUnderScoreCase(name), value);
+//        return wrapper;
+//    }
 
     /**
      * 插入記錄

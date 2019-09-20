@@ -6,11 +6,17 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * 主子表
+ * 主子表都是自己
+ *
  * @author 小明不读书
  */
 @Data
-public class BaseDetailPo<T> extends BasePo {
+public class BaseSubPo<T> extends BasePo {
+
+    /**
+     * 父id
+     */
+    private Long pid;
 
     /**
      * 明细子表

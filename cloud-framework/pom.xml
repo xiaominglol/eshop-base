@@ -10,10 +10,9 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>cloud-core</module>
         <module>cloud-eureka</module>
         <module>cloud-apollo</module>
-        <module>cloud-config</module>
-        <module>cloud-config-repo</module>
         <module>cloud-turbine</module>
         <module>cloud-zipkin</module>
         <module>cloud-gateway</module>
@@ -23,7 +22,6 @@
         <module>cloud-es</module>
         <module>cloud-service</module>
         <module>cloud-facade</module>
-        <module>cloud-core</module>
     </modules>
 
     <properties>
@@ -120,16 +118,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <!-- 使用aliyun镜像 -->
-    <repositories>
-        <repository>
-            <id>aliyun</id>
-            <name>aliyun</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
-        </repository>
-    </repositories>
-
 
     <build>
         <plugins>

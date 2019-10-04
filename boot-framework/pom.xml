@@ -14,15 +14,16 @@
         <module>boot-web</module>
         <module>boot-mybatis</module>
         <module>boot-redis</module>
+        <module>boot-shiro</module>
         <module>boot-quartz</module>
         <module>boot-mail</module>
         <module>boot-activity</module>
         <module>boot-sms</module>
         <module>boot-swagger</module>
-        <module>boot-shiro</module>
     </modules>
 
     <properties>
+        <!--环境配置-->
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -89,8 +90,23 @@
                 <version>${boot-framework.version}</version>
             </dependency>
 
-
-            <!--第三方模块-->
+            <!--boot-web-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi-3.14.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi-3.14.version}</version>
+            </dependency>
+            <!--boot-mybatis-->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
@@ -106,30 +122,17 @@
                 <artifactId>p6spy</artifactId>
                 <version>${p6spy.version}</version>
             </dependency>
+            <!--boot-redis-->
             <dependency>
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson-spring-boot-starter</artifactId>
                 <version>${redisson.version}</version>
             </dependency>
+            <!--boot-shiro-->
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-spring</artifactId>
                 <version>${shiro.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>${fastjson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.poi</groupId>
-                <artifactId>poi</artifactId>
-                <version>${poi-3.14.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.poi</groupId>
-                <artifactId>poi-ooxml</artifactId>
-                <version>${poi-3.14.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

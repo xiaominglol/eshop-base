@@ -7,4 +7,8 @@ turbine:
   #需要监控的微服务名称
   app-config: web-example-server
   #待测试
+  #指定集群的名称为default，当服务实例非常多的时候，可以启动多个Turbine来
+  #构建不同的聚合集群，而该参数可以区分这些不同的集群，同时该参数可以在
+  #Hystrix仪表盘中用来定位不同的聚合集群，只需在Hystrix Stream的URL中通过cluster
+  #参数来指定。
   cluster-name-expression: "'default'"

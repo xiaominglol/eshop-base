@@ -35,11 +35,6 @@
             <artifactId>boot-redis</artifactId>
         </dependency>
         <!--框架模块-->
-        <!--eureka客户端-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
         <!--turbine服务监控-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

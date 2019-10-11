@@ -22,6 +22,7 @@
         <module>cloud-es</module>
         <module>cloud-service</module>
         <module>cloud-facade</module>
+        <module>cloud-nacos</module>
     </modules>
 
     <properties>
@@ -88,6 +89,11 @@
             <dependency>
                 <groupId>com.gemini.cloud.framework</groupId>
                 <artifactId>cloud-core</artifactId>
+                <version>${cloud-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gemini.cloud.framework</groupId>
+                <artifactId>cloud-nacos</artifactId>
                 <version>${cloud-framework.version}</version>
             </dependency>
             <dependency>

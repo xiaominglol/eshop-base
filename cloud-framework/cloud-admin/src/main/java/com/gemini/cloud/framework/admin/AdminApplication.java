@@ -4,7 +4,7 @@ import com.gemini.boot.framework.core.CoreApplication;
 import com.gemini.boot.framework.core.exception.CloudCoreException;
 import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * Admin服务
@@ -13,7 +13,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @date 2019-06-22
  */
 @EnableAdminServer
-@EnableEurekaClient
+@EnableDiscoveryClient
 @SpringBootApplication
 public class AdminApplication {
 

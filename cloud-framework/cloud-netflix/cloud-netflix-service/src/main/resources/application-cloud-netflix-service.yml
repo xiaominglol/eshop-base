@@ -1,0 +1,24 @@
+eureka:
+  client:
+    service-url:
+      #与服务端地址一样，将客服端注册到服务端
+      defaultZone: http://192.168.0.107:10001/eureka/,http://192.168.0.109:10002/eureka/
+  instance:
+    #自定义主机映射名称
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    #表示将自己的IP注册到Eureka Server
+    prefer-ip-address: true
+
+
+
+spring:
+  zipkin:
+    base-url: http://47.110.47.45:9411/
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      # 默认的采样比率为0.1，不能看到所有请求数据
+      # 更改采样比率为1，就能看到所有的请求数据了，但是这样会增加接口调用延迟
+      probability: 1.0

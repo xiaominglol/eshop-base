@@ -10,16 +10,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-core</artifactId>
+    <artifactId>cloud-alibaba</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>cloud-nacos-client</module>
+        <module>cloud-alibaba-service</module>
+    </modules>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.gemini.boot.framework</groupId>
-            <artifactId>boot-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter</artifactId>
-        </dependency>
-    </dependencies>
 </project>

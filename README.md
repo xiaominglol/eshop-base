@@ -39,3 +39,14 @@
 │  ├─cloud-mq       消息队列      已完成
 │  ├─cloud-es       es储存        已完成
 ```
+admin
+nacos = eureka + apollo
+Spring Cloud Circuit Breaker = Sentinel / hystrix + dashboard + turbine
+dubbo = ribbon + feign
+Spring Cloud Gateway
+Spring Cloud OpenFeign
+Spring Cloud Stream
+Spring Cloud Task   /       Schedulerx
+Spring Cloud Security/Oauth2
+
+Sleuth + Zipkin

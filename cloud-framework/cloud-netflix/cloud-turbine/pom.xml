@@ -3,19 +3,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>cloud-framework</artifactId>
+        <artifactId>cloud-netflix</artifactId>
         <groupId>com.gemini.cloud.framework</groupId>
         <version>2.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-admin</artifactId>
+    <artifactId>cloud-turbine</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.gemini.cloud.framework</groupId>
-            <artifactId>cloud-service</artifactId>
+            <artifactId>cloud-netflix-service</artifactId>
             <exclusions>
                 <exclusion>
                     <groupId>com.gemini.boot.framework</groupId>
@@ -24,8 +24,12 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-server</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-turbine</artifactId>
         </dependency>
     </dependencies>
     <build>
@@ -34,7 +38,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.gemini.cloud.framework.admin.AdminApplication</mainClass>
+                    <mainClass>com.gemini.cloud.framework.turbine.TurbineApplication</mainClass>
                     <layout>JAR</layout>
                 </configuration>
                 <executions>

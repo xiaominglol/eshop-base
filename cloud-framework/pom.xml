@@ -11,18 +11,15 @@
 
     <modules>
         <module>cloud-core</module>
-        <module>cloud-eureka</module>
-        <module>cloud-apollo</module>
-        <module>cloud-turbine</module>
-        <module>cloud-zipkin</module>
-        <module>cloud-gateway</module>
+        <module>cloud-netflix</module>
+        <module>cloud-alibaba</module>
         <module>cloud-admin</module>
+        <module>cloud-gateway</module>
         <module>cloud-oauth2</module>
         <module>cloud-mq</module>
         <module>cloud-es</module>
         <module>cloud-service</module>
         <module>cloud-facade</module>
-        <module>cloud-nacos</module>
     </modules>
 
     <properties>
@@ -42,6 +39,7 @@
         <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
         <spring-boot-admin.version>2.1.5</spring-boot-admin.version>
+        <spring-alibaba-cloud.version>2.1.0.RELEASE</spring-alibaba-cloud.version>
 
         <!--第三方版本-->
         <apollo.version>1.4.0</apollo.version>
@@ -85,6 +83,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-alibaba-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <!--自定义模块-->
             <dependency>
                 <groupId>com.gemini.cloud.framework</groupId>
@@ -93,7 +98,7 @@
             </dependency>
             <dependency>
                 <groupId>com.gemini.cloud.framework</groupId>
-                <artifactId>cloud-nacos</artifactId>
+                <artifactId>cloud-nacos-client</artifactId>
                 <version>${cloud-framework.version}</version>
             </dependency>
             <dependency>
@@ -104,6 +109,16 @@
             <dependency>
                 <groupId>com.gemini.cloud.framework</groupId>
                 <artifactId>cloud-service</artifactId>
+                <version>${cloud-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gemini.cloud.framework</groupId>
+                <artifactId>cloud-netflix-service</artifactId>
+                <version>${cloud-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gemini.cloud.framework</groupId>
+                <artifactId>cloud-alibaba-service</artifactId>
                 <version>${cloud-framework.version}</version>
             </dependency>
             <dependency>

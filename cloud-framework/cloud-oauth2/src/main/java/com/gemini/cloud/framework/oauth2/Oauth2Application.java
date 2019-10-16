@@ -4,7 +4,7 @@ import com.gemini.boot.framework.core.CoreApplication;
 import com.gemini.boot.framework.core.exception.CloudCoreException;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @EnableOAuth2Sso
 @EnableResourceServer
-@EnableEurekaClient
+@EnableDiscoveryClient
 @SpringBootApplication
 public class Oauth2Application {
     @RequestMapping("/")

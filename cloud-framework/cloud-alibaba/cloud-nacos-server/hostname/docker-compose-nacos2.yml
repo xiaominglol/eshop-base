@@ -1,0 +1,15 @@
+version: "3"
+services:
+  nacos-server:
+    hostname: nacos2
+    container_name: nacos
+    image: nacos/nacos-server:latest
+    volumes:
+      - ../logs:/home/nacos/logs
+      - ../init.d/custom.properties:/home/nacos/init.d/custom.properties
+    ports:
+      - "8848:8848"
+      - "9555:9555"
+    env_file:
+      - ../env/nacos-hostname.env
+    restart: on-failure

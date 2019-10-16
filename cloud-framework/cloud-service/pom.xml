@@ -16,35 +16,12 @@
         <!--自定义模块-->
         <dependency>
             <groupId>com.gemini.cloud.framework</groupId>
-            <artifactId>cloud-core</artifactId>
+            <artifactId>cloud-netflix-service</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.gemini.cloud.framework</groupId>
-            <artifactId>cloud-apollo</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.gemini.boot.framework</groupId>
-            <artifactId>boot-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.gemini.boot.framework</groupId>
-            <artifactId>boot-mybatis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.gemini.boot.framework</groupId>
-            <artifactId>boot-redis</artifactId>
-        </dependency>
-        <!--框架模块-->
-        <!--turbine服务监控-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
-        </dependency>
-        <!--zipkin服务跟踪-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zipkin</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.gemini.cloud.framework</groupId>-->
+<!--            <artifactId>cloud-alibaba-service</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

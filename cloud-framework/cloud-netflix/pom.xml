@@ -10,16 +10,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-core</artifactId>
+    <artifactId>cloud-netflix</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>cloud-eureka</module>
+        <module>cloud-apollo</module>
+        <module>cloud-turbine</module>
+        <module>cloud-netflix-service</module>
+    </modules>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.gemini.boot.framework</groupId>
-            <artifactId>boot-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter</artifactId>
-        </dependency>
-    </dependencies>
+
 </project>

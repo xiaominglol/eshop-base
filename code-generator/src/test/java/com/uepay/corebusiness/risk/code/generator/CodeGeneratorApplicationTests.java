@@ -42,11 +42,8 @@ public class CodeGeneratorApplicationTests {
 		basePath = file.getParent() + "/src";
 
         String author = "小明不读书";
-		String url = basePath + "/risk/console";
-		String request = "/risk/console";
-		String templatePath = "risk/console";
-		Map<String, String> map = new HashMap<>();
 
+		Map<String, String> map = new HashMap<>();
 		map.put("字典表", "f_sys_dict");
 		map.put("错误日志表", "f_sys_error_log");
 		map.put("登陆日志表", "f_sys_login_log");
@@ -56,6 +53,10 @@ public class CodeGeneratorApplicationTests {
 		map.put("角色表", "f_sys_role");
 		map.put("用户表", "f_sys_user");
 
+
+		String url = basePath + "/risk/console";
+		String request = "/risk/console";
+		String templatePath = "risk/console";
 		CodeUtils.generateBatch(map, templatePath, columnService, url, author, request);
 
 		url = basePath + "/risk/api";

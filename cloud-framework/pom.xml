@@ -103,7 +103,7 @@
             </dependency>
             <dependency>
                 <groupId>com.gemini.cloud.framework</groupId>
-                <artifactId>cloud-apollo</artifactId>
+                <artifactId>cloud-apollo-client</artifactId>
                 <version>${cloud-framework.version}</version>
             </dependency>
             <dependency>
@@ -113,12 +113,7 @@
             </dependency>
             <dependency>
                 <groupId>com.gemini.cloud.framework</groupId>
-                <artifactId>cloud-netflix-service</artifactId>
-                <version>${cloud-framework.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.gemini.cloud.framework</groupId>
-                <artifactId>cloud-alibaba-service</artifactId>
+                <artifactId>cloud-eureka-client</artifactId>
                 <version>${cloud-framework.version}</version>
             </dependency>
             <dependency>

@@ -13,8 +13,8 @@
     <artifactId>cloud-alibaba</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <module>cloud-nacos-server</module>
         <module>cloud-nacos-client</module>
-        <module>cloud-alibaba-service</module>
     </modules>
 
 </project>

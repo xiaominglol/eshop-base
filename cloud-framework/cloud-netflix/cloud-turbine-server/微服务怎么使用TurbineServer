@@ -1,0 +1,38 @@
+一、微服务怎么使用HystrixDashboard
+1、添加POM
+
+<!-- actuator监控信息完善 -->
+<dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+<!--hystrix-dashboard监控-->
+<dependency>
+	<groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+</dependency>
+
+
+2、配置YML
+
+spring:
+  application:
+    name: member-restapi
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka2001.com:2001/eureka/,http://eureka2002.com:2002/eureka/
+  instance:
+      #自定义主机映射名称
+      instance-id: ${spring.application.name}-${server.port}
+      #表示将自己的IP注册到Eureka Server
+      prefer-ip-address: true
+
+3、主启动类添加注解
+
+@EnableEurekaClient
+
+访问
+http://localhost:4001
+http://localhost:4001/turbine.stream

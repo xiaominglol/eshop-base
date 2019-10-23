@@ -13,10 +13,11 @@
     <artifactId>cloud-netflix</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>cloud-eureka</module>
-        <module>cloud-apollo</module>
-        <module>cloud-turbine</module>
-        <module>cloud-netflix-service</module>
+        <module>cloud-eureka-server</module>
+        <module>cloud-eureka-client</module>
+        <module>cloud-apollo-server</module>
+        <module>cloud-apollo-client</module>
+        <module>cloud-turbine-server</module>
     </modules>
 
 

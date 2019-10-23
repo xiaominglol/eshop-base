@@ -16,12 +16,12 @@
         <!--自定义模块-->
         <dependency>
             <groupId>com.gemini.cloud.framework</groupId>
-            <artifactId>cloud-netflix-service</artifactId>
+            <artifactId>cloud-eureka-client</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.gemini.cloud.framework</groupId>-->
-<!--            <artifactId>cloud-alibaba-service</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.gemini.cloud.framework</groupId>-->
+        <!--            <artifactId>cloud-nacos-client</artifactId>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

@@ -1,0 +1,49 @@
+spring:
+  profiles:
+    active: eureka1
+  application:
+    name: Eureka-Server
+  #开启用户认证
+#  security:
+#    user:
+#      name: eureka
+#      password: eureka
+eureka:
+#  server:
+    #关闭自我保护
+#    enable-self-preservation: false
+  client:
+    #表示是否将自己注册到Eureka Server，默认true
+    register-with-eureka: true
+    #表示是否从Eureka Server获取注册信息，默认为true
+    #如果是单机环境，不需要同步其他集群Eureka Server，如果是集群环境，则需要同步其他EurekaServer服务
+    fetch-registry: true
+    #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址，多个地址可使用“，”分割。
+    serviceUrl:
+      defaultZone: http://eureka1:10001/eureka/,http://eureka2:10002/eureka/
+  instance:
+    #自定义主机映射名称
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    #表示将自己的IP注册到Eureka Server
+    prefer-ip-address: true
+    #hostname: ${spring.cloud.client.ip-address}
+---
+spring:
+  profiles: eureka1
+server:
+  port: 10001
+eureka:
+  instance:
+    #Eureka Server的实例名称,注意：集群环境不能有一样的名称
+    hostname: eureka1
+---
+spring:
+  profiles: eureka2
+server:
+  port: 10002
+eureka:
+  instance:
+    #Eureka Server的实例名称,注意：集群环境不能有一样的名称
+    hostname: eureka2
+
+

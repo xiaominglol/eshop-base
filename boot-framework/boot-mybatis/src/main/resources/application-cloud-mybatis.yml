@@ -41,7 +41,7 @@ mybatis-plus:
   #  ID_WORKER_STR: ID_WORKER_STR(5, “字符串全局唯一ID”);
   #      #主键类型：AUTO（数据库ID自增），NONE（），INPUT（用户输入ID），ID_WORKER（全局唯一ID (数字类型)）, UUID（全局唯一ID UUID），ID_WORKER_STR（全局唯一ID (字符类型)）
   #      id-type: AUTO
-  mapper-locations: classpath:/mapper/*.xml
+  mapper-locations: classpath:/mapper/**/*.xml
 #  configuration:
 #    # 开启驼峰命名匹配
 #    map-underscore-to-camel-case: true

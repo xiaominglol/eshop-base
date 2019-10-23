@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.uepay.corebusiness.risk.code.generator.mapper.DictMapper">
+<mapper namespace="com.gemini.code.generator.mapper.DictMapper">
 
-	<resultMap id="resultMap" type="com.uepay.corebusiness.risk.code.generator.domain.Dict">
-		<id column="tableName" property="tableName" javaType="String"/>
-		<id column="id" property="id" javaType="Long"/>
-		<result column="pid" property="pid" javaType="Long"/>
-		<result column="code" property="code" javaType="String"/>
+    <resultMap id="resultMap" type="com.gemini.code.generator.domain.Dict">
+        <id column="tableName" property="tableName" javaType="String"/>
+        <id column="id" property="id" javaType="Long"/>
+        <result column="pid" property="pid" javaType="Long"/>
+        <result column="code" property="code" javaType="String"/>
         <result column="name" property="name" javaType="String"/>
         <result column="description" property="description" javaType="String"/>
-        <result column="state_id" property="stateId" javaType="Long"/>
-        <result column="state_code" property="stateCode" javaType="String"/>
-        <result column="state_name" property="stateName" javaType="String"/>
-        <result column="modify_user_id" property="modifyUserId" javaType="Long"/>
-        <result column="modify_user_name" property="modifyUserName" javaType="String"/>
-        <result column="modify_time" property="modifyTime" javaType="java.sql.Timestamp"/>
-        <collection property="detailList" select="children" column="tableName=tableName, id=id"></collection>
-	</resultMap>
+        <collection property="children" select="children" column="tableName=tableName, id=id"></collection>
+    </resultMap>
 
-	<select id="find" resultMap="resultMap">
+    <select id="find" resultMap="resultMap">
 		select
 			#{tableName} tableName,
 			id,
@@ -30,7 +24,7 @@
 		where pid is null
 	</select>
 
-	<select id="children" resultMap="resultMap">
+    <select id="children" resultMap="resultMap">
 		select
 			#{tableName} tableName,
 			id,

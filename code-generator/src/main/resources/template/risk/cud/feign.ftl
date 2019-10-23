@@ -8,12 +8,11 @@ import java.util.List;
 
 /**
  * ${table.title}
- * @author ${table.author}
  */
-@FeignClient(contextId = "${table.domainName}CudClient", name = "business-risk-cud-service")
+@FeignClient(contextId = "${table.smallClassName}CudClient", name = "business-risk-cud-service")
 public interface ${table.className}Feign {
 
-    String root = "${table.request}";
+String root = "${table.requestMapping}";
 
     @GetMapping(root + "/{id}")
     ${table.className}Dto get(@PathVariable(value = "id") Long id);

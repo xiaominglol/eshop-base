@@ -1,9 +1,7 @@
-package com.uepay.corebusiness.risk.code.generator.utils;
+package com.gemini.code.generator.utils;
 
-import com.uepay.corebusiness.risk.code.generator.domain.Column;
-import com.uepay.corebusiness.risk.code.generator.domain.Dict;
-import com.uepay.corebusiness.risk.code.generator.domain.Table;
-import com.uepay.corebusiness.risk.code.generator.service.ColumnService;
+import com.gemini.code.generator.domain.Dict;
+import com.gemini.code.generator.domain.Table;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 
@@ -14,21 +12,19 @@ import java.util.Map;
 
 public class CodeUtils {
 
-    public static void generateBatch(Map<String, String> map, String templatePath, ColumnService columnService, String url, String author, String request) {
-        System.out.println(request + "：》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》");
-        for (String key : map.keySet()) {
-            System.out.println("------------------------------------------------------------------------------------------------");
-            List<Column> list = columnService.find(map.get(key));
-            if (list.size() > 0) {
-                Table table = new Table(url, author, key, request, list);
-                CodeUtils.createModel(table, templatePath);
-            }
-            System.out.println("------------------------------------------------------------------------------------------------");
-        }
-        System.out.println("end：《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《");
-    }
+    /**
+     * 生成代码
+     *
+     * @param map          key=表名称，value=表注释
+     * @param templatePath
+     * @param mysqlService
+     * @param catalog      代码生成的目录
+     * @param author
+     * @param request
+     */
 
     public static void createModel(Table table, String templatePath) {
+        System.out.println(templatePath + "：》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》");
         String className = table.getClassName();
         createCode(table, templatePath, "feign", className + "Feign.java");
         createCode(table, templatePath, "controller", className + "Controller.java");
@@ -41,6 +37,7 @@ public class CodeUtils {
         createCode(table, templatePath, "vo", className + "Vo.java");
         createCode(table, templatePath, "menu", className + "：menu.txt");
         createCode(table, templatePath, "test", className + "：test.txt");
+        System.out.println("end：《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《");
     }
 
     public static void createCode(Table table, String templatePath, String templateName, String fileName) {
@@ -62,27 +59,18 @@ public class CodeUtils {
 
                 if (template != null) {
                     System.out.println(templateName + ".ftl");
-                    File outFile = new File(table.getUrl() + fileName);
-                    File outFile2 = new File((table.getUrl() + fileName).replaceFirst(table.getDomainName(), templateName));
+//                    File outFile = new File(table.getCatalog() + fileName);
+                    File outFile = new File((table.getCatalog() + fileName).replaceFirst(table.getSmallClassName(), templateName));
                     if (!outFile.getParentFile().exists()) {
                         outFile.getParentFile().mkdirs();
                     }
-                    if (!outFile2.getParentFile().exists()) {
-                        outFile2.getParentFile().mkdirs();
-                    }
+
+                    System.out.println(outFile.getAbsolutePath());
 
                     Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outFile), "UTF-8"));
                     Map<String, Object> dataMap = new HashMap<String, Object>();
                     dataMap.put("table", table);
                     template.process(dataMap, out);
-
-                    Writer out2 = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outFile2), "UTF-8"));
-                    Map<String, Object> dataMap2 = new HashMap<String, Object>();
-                    dataMap2.put("table", table);
-                    template.process(dataMap, out2);
-
-                    out2.flush();
-                    out2.close();
 
                     out.flush();
                     out.close();

@@ -1,27 +1,28 @@
 package com.uepay.corebusiness.risk.console.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.gemini.boot.framework.mybatis.po.BasePo;
+import com.uepay.corebusiness.risk.base.po.BasePo;
 import lombok.Data;
-<#if table.hasBigDecimal??>
+<#list table.columns as column>
+    <#if column.javaType != column.javaFullType>
 
-import java.math.BigDecimal;
-</#if>
+        import ${column.javaFullType}
+    </#if>
+</#list>
 
 /**
  * ${table.title}
- * @author ${table.author}
  */
 @Data
 @TableName("${table.tableName}")
 public class ${table.className}Po extends BasePo {
 <#list table.columns as column>
-    <#if column.mappingName != 'id'>
+    <#if column.javaName != 'id'>
 
     /**
-     * <#if column.mappingComment??>${column.mappingComment}</#if>
+        * <#if column.comment??>${column.comment}</#if>
      */
-    private ${column.mappingType} ${column.mappingName};
+        private ${column.javaType} ${column.javaName};
     </#if>
 </#list>
 }

@@ -1,13 +1,13 @@
-package com.gemini.portal.module.sys.service;
+package com.uepay.corebusiness.risk.cud.service.service;
 
-import com.gemini.portal.common.service.BaseDetailService;
-import com.gemini.portal.module.sys.dto.${table.className}Dto;
-import com.gemini.portal.module.sys.mapper.${table.className}Mapper;
-import com.gemini.portal.module.sys.po.${table.className}Po;
+import com.uepay.corebusiness.risk.base.service.BaseService;
+import com.uepay.corebusiness.risk.cud.facade.dto.${table.className}Dto;
+import com.uepay.corebusiness.risk.cud.service.mapper.${table.className}Mapper;
+import com.uepay.corebusiness.risk.cud.service.po.${table.className}Po;
 
 /**
  * ${table.title}
- * @author ${table.author}
  */
-public interface ${table.className}Service extends CrudService<${table.className}Dto, ${table.className}Po, ${table.className}Mapper> {
+public interface ${table.className}Service extends BaseService
+<${table.className}Dto, ${table.className}Po, ${table.className}Mapper> {
 }

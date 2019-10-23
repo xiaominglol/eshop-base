@@ -6,7 +6,7 @@ import com.uepay.corebusiness.risk.console.result.Result;
 import com.uepay.corebusiness.risk.console.service.${table.className}Service;
 import com.uepay.corebusiness.risk.console.utils.BeanUtils;
 import com.uepay.corebusiness.risk.console.vo.${table.className}Vo;
-import com.gemini.portal.module.sys.dto.${table.className}Dto;
+import com.uepay.corebusiness.risk.cud.facade.dto.${table.className}Dto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,14 +24,14 @@ import java.util.List;
 public class ${table.className}Controller {
 
     @Autowired
-    ${table.className}Service ${table.domainName}Service;
+${table.className}Service ${table.smallClassName}Service;
 
     @PostMapping
     Mono<Result> add${table.className}(@RequestBody ${table.className}Vo vo) {
         Result result;
         try {
             log.info(traderDcEntity.toString());
-            return ${table.domainName}Service.insert(traderDcEntity);
+    return ${table.smallClassName}Service.insert(traderDcEntity);
             result = new Result(true, "新增成功");
         } catch (Exception e) {
             result = new Result(false, "新增失敗");
@@ -46,7 +46,7 @@ public class ${table.className}Controller {
         Result result;
         try {
             ${table.className}Dto dto = BeanUtils.copyObject(vo, ${table.className}Dto.class);
-            ${table.domainName}Feign.update(dto);
+        ${table.smallClassName}Feign.update(dto);
             result = new Result(true, "更新成功");
         } catch (Exception e) {
             result = new Result(false, "更新失敗");
@@ -60,7 +60,7 @@ public class ${table.className}Controller {
     Mono<Result> delete(@PathVariable Long id) {
         Result result;
         try {
-            ${table.domainName}Feign.delete(id);
+            ${table.smallClassName}Feign.delete(id);
             result = new Result(true, "刪除成功");
         } catch (Exception e) {
             result = new Result(false, "刪除失敗");

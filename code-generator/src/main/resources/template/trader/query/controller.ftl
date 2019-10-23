@@ -18,21 +18,21 @@ import reactor.core.publisher.Mono;
 public class ${table.className}Controller {
 
     @Autowired
-    ${table.className}Service ${table.domainName}Service;
+${table.className}Service ${table.smallClassName}Service;
 
     @GetMapping("/{id}")
     Mono<Result> get${table.className}ById(@PathVariable final Long id) {
-        return ${table.domainName}Service.getById(id);
+    return ${table.smallClassName}Service.getById(id);
     }
 
     @PostMapping("/list")
     Mono<Result> find${table.className}List(@RequestBody final ${table.className}Dto dto) {
-        return ${table.domainName}Service.findList(dto);
+        return ${table.smallClassName}Service.findList(dto);
     }
 
     @PostMapping("/page")
     Mono<Result> find${table.className}Page(@RequestBody final ${table.className}Dto dto) {
-        return ${table.domainName}Service.findPage(dto);
+            return ${table.smallClassName}Service.findPage(dto);
     }
 }
 

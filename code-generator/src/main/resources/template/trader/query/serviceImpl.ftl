@@ -15,15 +15,16 @@ import java.util.Map;
  * @author ${table.author}
  */
 @Service
-public class ${table.className}ServiceImpl extends CrudServiceImpl<${table.className}Dto, ${table.className}Po, ${table.className}Mapper> implements ${table.className}Service {
+public class ${table.className}ServiceImpl extends BaseServiceImpl
+<${table.className}Dto, ${table.className}Po, ${table.className}Mapper> implements ${table.className}Service {
 
     @Override
     protected QueryWrapper<${table.className}Po> getWrapper(${table.className}Dto dto) {
         return super.getWrapper(dto)
             <#assign field>
                 <#list table.columns as column>
-                    <#if column.mappingName != 'id' &&  column.mappingName != 'modifyDate' && column.mappingName != 'modifyUser' && column.mappingName != 'modifyType' && column.mappingName != 'modifyAccessId'>
-                .eq(!StringUtils.isEmpty(dto.get${column.mappingName?cap_first}()), "${column.name}", dto.get${column.mappingName?cap_first}())
+                    <#if column.javaName != 'id' &&  column.javaName != 'modifyDate' && column.javaName != 'modifyUser' && column.javaName != 'modifyType' && column.javaName != 'modifyAccessId'>
+                        .eq(!StringUtils.isEmpty(dto.get${column.javaName?cap_first}()), "${column.name}", dto.get${column.javaName?cap_first}())
                     </#if>
                 </#list>
             </#assign>

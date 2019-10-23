@@ -15,15 +15,16 @@ import java.util.Map;
  * @author ${table.author}
  */
 @Service
-public class ${table.className}ServiceImpl extends CrudServiceImpl<${table.className}Vo, ${table.className}Po, ${table.className}Mapper> implements ${table.className}Service {
+public class ${table.className}ServiceImpl extends BaseServiceImpl
+<${table.className}Vo, ${table.className}Po, ${table.className}Mapper> implements ${table.className}Service {
 
     @Override
     protected QueryWrapper<${table.className}Po> getWrapper(${table.className}Vo vo) {
         return super.getWrapper(vo)
             <#assign field>
                 <#list table.columns as column>
-                    <#if column.mappingName != 'id' &&  column.mappingName != 'modifyDate' && column.mappingName != 'modifyUser' && column.mappingName != 'modifyType' && column.mappingName != 'modifyAccessId'>
-                .eq(!StringUtils.isEmpty(vo.get${column.mappingName?cap_first}()), "${column.name}", vo.get${column.mappingName?cap_first}())
+                    <#if column.javaName != 'id' &&  column.javaName != 'modifyDate' && column.javaName != 'modifyUser' && column.javaName != 'modifyType' && column.javaName != 'modifyAccessId'>
+                        .eq(!StringUtils.isEmpty(vo.get${column.javaName?cap_first}()), "${column.name}", vo.get${column.javaName?cap_first}())
                     </#if>
                 </#list>
             </#assign>

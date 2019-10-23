@@ -8,6 +8,6 @@ spring:
     password: root
   freemarker:
     checkTemplateLocation: false
-mybatis:
+mybatis-plus:
   mapper-locations: classpath*:mapper/*Mapper.xml
-  type-aliases-package: com.code.domain
+  type-aliases-package: com.gemini.code.generator.domain

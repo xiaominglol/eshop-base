@@ -1,23 +1,24 @@
-package com.gemini.portal.module.sys.dto;
+package com.uepay.corebusiness.risk.cud.facade.dto;
 
-import com.gemini.boot.framework.mybatis.dto.BaseDto;
+import com.uepay.corebusiness.risk.base.dto.BaseDto;
 import lombok.Data;
-<#if table.hasBigDecimal??>
+<#list table.columns as column>
+    <#if column.javaType != column.javaFullType>
 
-import java.math.BigDecimal;
-</#if>
+        import ${column.javaFullType}
+    </#if>
+</#list>
 
 /**
  * ${table.title}
- * @author ${table.author}
  */
 @Data
 public class ${table.className}Dto extends BaseDto {
 <#list table.columns as column>
 
     /**
-     * <#if column.mappingComment??>${column.mappingComment}</#if>
+    * <#if column.comment??>${column.comment}</#if>
      */
-    private ${column.mappingType} ${column.mappingName};
+    private ${column.javaType} ${column.javaName};
 </#list>
 }

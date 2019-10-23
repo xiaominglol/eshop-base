@@ -7,10 +7,10 @@ ${table.action}/page
     "type": "object",
     "properties": {
 <#list table.columns as column>
-    <#if column.mappingName != "id">
-        "${column.mappingName}": {
+    <#if column.javaName != "id">
+        "${column.javaName}": {
             "type": "string",
-            "description": "<#if column.mappingComment??>${column.mappingComment}</#if>",
+        "description": "<#if column.comment??>${column.comment}</#if>",
             "mock": {
                 "mock": ""
             }
@@ -34,8 +34,8 @@ ${table.action}/page
     },
     "required": [
 <#list table.columns as column>
-    <#if column.mappingName != "id">
-        "${column.mappingName}",
+    <#if column.javaName != "id">
+        "${column.javaName}",
     </#if>
 </#list>
         "pageNum",

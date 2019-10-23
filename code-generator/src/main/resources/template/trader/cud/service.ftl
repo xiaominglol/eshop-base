@@ -7,6 +7,7 @@ import com.uepay.corebusiness.risk.console.vo.${table.className}Vo;
  * ${table.title}
  * @author ${table.author}
  */
-public interface ${table.className}Service extends CrudService<${table.className}Vo, ${table.className}Po> {
+public interface ${table.className}Service extends BaseService
+<${table.className}Vo, ${table.className}Po> {
 
 }

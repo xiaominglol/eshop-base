@@ -1,8 +1,8 @@
-package com.uepay.corebusiness.risk.code.generator.service.impl;
+package com.gemini.code.generator.service.impl;
 
-import com.uepay.corebusiness.risk.code.generator.domain.Dict;
-import com.uepay.corebusiness.risk.code.generator.mapper.DictMapper;
-import com.uepay.corebusiness.risk.code.generator.service.DictService;
+import com.gemini.code.generator.domain.Dict;
+import com.gemini.code.generator.mapper.DictMapper;
+import com.gemini.code.generator.service.DictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

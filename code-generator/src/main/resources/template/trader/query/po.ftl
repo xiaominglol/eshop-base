@@ -11,12 +11,12 @@ import lombok.Data;
 @TableName("${table.tableName}")
 public class ${table.className}Po extends BasePo {
 <#list table.columns as column>
-    <#if column.mappingName != 'id' &&  column.mappingName != 'modifyDate' && column.mappingName != 'modifyUser' && column.mappingName != 'modifyType' && column.mappingName != 'modifyAccessId'>
+    <#if column.javaName != 'id' &&  column.javaName != 'modifyDate' && column.javaName != 'modifyUser' && column.javaName != 'modifyType' && column.javaName != 'modifyAccessId'>
 
     /**
-     * <#if column.mappingComment??>${column.mappingComment}</#if>
+        * <#if column.comment??>${column.comment}</#if>
      */
-    private ${column.mappingType} ${column.mappingName};
+        private ${column.javaType} ${column.javaName};
     </#if>
 </#list>
 }

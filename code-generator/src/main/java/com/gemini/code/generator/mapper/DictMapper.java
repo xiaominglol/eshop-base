@@ -1,6 +1,6 @@
-package com.uepay.corebusiness.risk.code.generator.mapper;
+package com.gemini.code.generator.mapper;
 
-import com.uepay.corebusiness.risk.code.generator.domain.Dict;
+import com.gemini.code.generator.domain.Dict;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

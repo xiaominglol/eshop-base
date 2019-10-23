@@ -1,10 +1,10 @@
 ${table.title}
 
-${table.request}/1/10
+${table.requestMapping}/1/10
 
 <#list table.columns as column>
-    <#if column.mappingName != "id">
-${column.mappingName}:""
+    <#if column.javaName != "id">
+        ${column.javaName}:""
     </#if>
 </#list>
 
@@ -13,10 +13,10 @@ ${column.mappingName}:""
     "type": "object",
     "properties": {
     <#list table.columns as column>
-        <#if column.mappingName != "id">
-        "${column.mappingName}": {
+        <#if column.javaName != "id">
+            "${column.javaName}": {
             "type": "string",
-            "description": "<#if column.mappingComment??>${column.mappingComment}</#if>",
+            "description": "<#if column.comment??>${column.comment}</#if>",
             "mock": {
                 "mock": ""
             }
@@ -47,8 +47,8 @@ ${column.mappingName}:""
     },
     "required": [
     <#list table.columns as column>
-        <#if column.mappingName != "id">
-        "${column.mappingName}",
+        <#if column.javaName != "id">
+            "${column.javaName}",
         </#if>
     </#list>
         "current",

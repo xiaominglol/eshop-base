@@ -1,7 +1,7 @@
 /**
  * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
  */
-package com.uepay.corebusiness.risk.code.generator.utils;
+package com.gemini.code.generator.utils;
 
 import java.io.UnsupportedEncodingException;
 
@@ -150,5 +150,6 @@ public class StringUtils extends org.springframework.util.StringUtils {
 
         return sb.toString();
     }
+
 
 }

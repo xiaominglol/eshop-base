@@ -14,24 +14,22 @@ import reactor.core.publisher.Mono;
 
 /**
  * ${table.title}
- *
- * @author ${table.author}
  */
 @Slf4j
 @RestController
-@RequestMapping("${table.request}")
-public class ${table.className}Controller {
+@RequestMapping("${table.requestMapping}")
+public class ${table.className}Controller extends BaseController {
 
     @Autowired
-    ${table.className}Feign ${table.domainName}Feign;
+${table.className}Feign ${table.smallClassName}Feign;
 
     @Autowired
-    ${table.className}Service ${table.domainName}Service;
+${table.className}Service ${table.smallClassName}Service;
 
     @GetMapping("/{id}")
     Mono<ResponseData> get(@PathVariable final Long id) {
         return Mono
-                .justOrEmpty(${table.domainName}Service.get(id))
+    .justOrEmpty(${table.smallClassName}Service.get(id))
                 .map(vo -> {
                     return new ResponseData(vo);
                 })
@@ -45,7 +43,7 @@ public class ${table.className}Controller {
     @GetMapping
     Mono<ResponseData> list(final ${table.className}Vo vo) {
         return Mono
-                .just(${table.domainName}Service.list(vo))
+        .just(${table.smallClassName}Service.list(vo))
                 .map(list -> {
                     return new ResponseData(list);
                 })
@@ -58,7 +56,7 @@ public class ${table.className}Controller {
     @GetMapping("/{current}/{size}")
     Mono<ResponseData> page(final ${table.className}Vo vo, @PathVariable Long current, @PathVariable Long size) {
         return Mono
-                .just(${table.domainName}Service.page(vo, current, size))
+            .just(${table.smallClassName}Service.page(vo, current, size))
                 .map(page -> {
                     return new ResponseData(page);
                 })
@@ -70,10 +68,13 @@ public class ${table.className}Controller {
 
     @PostMapping
     Mono<ResponseData> insert(@RequestBody final ${table.className}Vo vo) {
+                <#if table.dicts??>vo.initDicts();</#if>
+                vo.setModifyUserId(userId);
+                vo.setModifyUserName(userName);
         return Mono
                 .justOrEmpty(BeanUtils.copy(vo, ${table.className}Dto.class))
                 .map(dto -> {
-                    return ${table.domainName}Feign.insert(dto);
+                return ${table.smallClassName}Feign.insert(dto);
                 })
                 .map(flag -> {
                     return  new ResponseData(flag ? HttpCodeEnum.N201 : HttpCodeEnum.N400);
@@ -87,10 +88,13 @@ public class ${table.className}Controller {
 
     @PutMapping
     Mono<ResponseData> update(@RequestBody final ${table.className}Vo vo) {
+                    <#if table.dicts??>vo.initDicts();</#if>
+                    vo.setModifyUserId(userId);
+                    vo.setModifyUserName(userName);
         return Mono
                 .justOrEmpty(BeanUtils.copy(vo, ${table.className}Dto.class))
                 .map(dto -> {
-                    return ${table.domainName}Feign.update(dto);
+                    return ${table.smallClassName}Feign.update(dto);
                 })
                 .map(flag -> {
                     return  new ResponseData(flag ? HttpCodeEnum.N201 : HttpCodeEnum.N400);
@@ -105,9 +109,9 @@ public class ${table.className}Controller {
     @DeleteMapping("/{id}")
     Mono<ResponseData> delete(@PathVariable final Long id) {
         return Mono
-                .justOrEmpty(${table.domainName}Service.get(id))
+                        .justOrEmpty(${table.smallClassName}Service.get(id))
                 .map(vo -> {
-                    return ${table.domainName}Feign.delete(id);
+                        return ${table.smallClassName}Feign.delete(id);
                 })
                 .map(flag -> {
                     return  new ResponseData(flag ? HttpCodeEnum.N204 : HttpCodeEnum.N400);

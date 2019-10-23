@@ -1,8 +1,9 @@
-package com.uepay.corebusiness.risk.cud.service.po;
+package com.gemini.business.${table.moduleName}.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.uepay.corebusiness.risk.base.po.BasePo;
+import com.gemini.boot.framework.mybatis.po.BaseSubPo;
 import lombok.Data;
+
 <#list table.columns as column>
     <#if column.javaType != column.javaFullType>
 
@@ -12,10 +13,13 @@ import lombok.Data;
 
 /**
 * ${table.tableComment}
+*
+* @author ${table.author}
+* @date 2018-10-24
 */
 @Data
 @TableName("${table.tableName}")
-public class ${table.className}Po extends BasePo {
+public class ${table.bigClassName}Po extends BasePo {
 <#list table.columns as column>
     <#if column.javaName != 'id'>
 

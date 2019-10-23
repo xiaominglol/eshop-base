@@ -1,13 +1,14 @@
-package com.uepay.corebusiness.risk.cud.service.service;
+package com.gemini.business.${table.moduleName}.service;
 
-import com.uepay.corebusiness.risk.base.service.BaseService;
-import com.uepay.corebusiness.risk.cud.facade.dto.${table.className}Dto;
-import com.uepay.corebusiness.risk.cud.service.mapper.${table.className}Mapper;
-import com.uepay.corebusiness.risk.cud.service.po.${table.className}Po;
+import com.gemini.business.common.service.BaseDetailService;
+import com.gemini.business.${table.moduleName}.mapper.${table.bigClassName}Mapper;
+import com.gemini.business.${table.moduleName}.po.${table.bigClassName}Po;
 
 /**
 * ${table.tableComment}
+*
+* @author ${table.author}
+* @date 2018-10-24
 */
-public interface ${table.className}Service extends BaseService
-<${table.className}Dto, ${table.className}Po, ${table.className}Mapper> {
+public interface ${table.bigClassName}Service extends BaseDetailService<${table.bigClassName}Po, ${table.bigClassName}Po, ${table.bigClassName}Mapper, ${table.bigClassName}Mapper> {
 }

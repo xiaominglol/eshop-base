@@ -55,7 +55,7 @@ public class CodeGeneratorApplicationTests {
         basePath = file.getParent() + "/src";
         String catalog = basePath + "";
         // controller请求路径
-        String requestMapping = "/product";
+        String requestMapping = "";
         // 模板路径
         String templatePath = "boot/";
 

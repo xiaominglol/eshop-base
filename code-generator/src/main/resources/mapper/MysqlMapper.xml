@@ -24,8 +24,8 @@
             <if test="tableName != '' and tableName != null">
                 and table_name=#{tableName}
             </if>
-            <if test="schemaName != '' and schemaName != null">
-                and table_schema=#{schemaName}
+            <if test="dataBaseName != '' and dataBaseName != null">
+                and table_schema=#{dataBaseName}
             </if>
         </where>
     </select>

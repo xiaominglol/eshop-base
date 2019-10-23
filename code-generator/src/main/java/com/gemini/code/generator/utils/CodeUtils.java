@@ -25,7 +25,7 @@ public class CodeUtils {
 
     public static void createModel(Table table, String templatePath) {
         System.out.println(templatePath + "：》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》");
-        String className = table.getClassName();
+        String className = table.getBigClassName();
         createCode(table, templatePath, "feign", className + "Feign.java");
         createCode(table, templatePath, "controller", className + "Controller.java");
         createCode(table, templatePath, "service", className + "Service.java");

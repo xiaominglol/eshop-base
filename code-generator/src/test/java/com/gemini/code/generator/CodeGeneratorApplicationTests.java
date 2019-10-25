@@ -1,5 +1,6 @@
 package com.gemini.code.generator;
 
+import com.gemini.code.generator.domain.Column;
 import com.gemini.code.generator.domain.DataBase;
 import com.gemini.code.generator.domain.Dict;
 import com.gemini.code.generator.domain.Table;
@@ -13,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.File;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +32,7 @@ public class CodeGeneratorApplicationTests {
 
     @Test
     public void dict() throws Exception {
-        List<Dict> list = dictService.find("gemini_portal.f_sys_dict");
+        List<Dict> list = dictService.find("product.t_platform_dict");
         CodeUtils.generateDicts(list);
         for (Dict dict : list) {
             CodeUtils.generateEnums(dict);
@@ -40,27 +42,26 @@ public class CodeGeneratorApplicationTests {
     @Test
     public void generator() {
 
-        /**
-         * 必填项
-         */
-        // 数据库名称
-        String dataBaseName = "product";
-        // 需要去掉的表前缀
-        String tablePrefix = "t_";
-        // 作者名称
-        String author = "小明不读书";
-        // 代码生成的目录名称
-        String basePath = System.getProperty("user.dir");
-        File file = new File(basePath);
-        basePath = file.getParent() + "/src";
-        String catalog = basePath + "";
-        // controller请求路径
-        String requestMapping = "";
-        // 模板路径
+        // 初始化基本参数
+        Table table = new Table();
+        table.setDataBaseName("product");
+        table.setTablePrefix("t_");
+        table.setPackageName("com.gemini.business");
+        table.setAuthor("小明不读书");
+//        table.setFeignName();
+//        table.setHasBigDecimal();
+//        table.setHasDate();
+//        table.setDetailListName();
+//        table.setDetail();
+//        table.setDicts();
+//        table.setHasDicts();
+        table.setCreateDate(new Date().toString());
+
+        // ftl模板路径
         String templatePath = "boot/";
 
         // 获取数据库的表名称和表注释
-        List<DataBase> product = mysqlService.getTable(dataBaseName);
+        List<DataBase> product = mysqlService.getTable(table.getDataBaseName());
         // key=表名称，value=表注释
         Map<String, String> map = new HashMap<>();
         for (DataBase dataBase : product) {
@@ -68,36 +69,21 @@ public class CodeGeneratorApplicationTests {
         }
 
         // 生成代码
+        // 代码生成的目录名称
+        String basePath = System.getProperty("user.dir");
+        File file = new File(basePath);
+        basePath = file.getParent() + "/src";
         for (String tableName : map.keySet()) {
-            String moduleName = tableName.substring(tablePrefix.length());
-            String[] moduleNames = moduleName.split("_");
-            Table table = new Table(tableName, basePath, map.get(tableName), requestMapping, mysqlService.getColumn(new Table(tableName)), tablePrefix, author);
+            table.setCatalog(basePath);
+            table.setTableName(tableName);
+            table.setTableComment(map.get(tableName));
+            table.setColumns(mysqlService.getColumn(tableName));
+            for (Column column : table.getColumns()) {
+                column.init();
+            }
+            table.initTable(table);
             CodeUtils.createModel(table, templatePath);
         }
-
-//
-//        Table table = new Table("b_r_file_info", basePath + "/file", "文件信息", "file/server", mysqlService.getColumn(new Table("b_r_file_info", "file")));
-//        CodeUtils.createModel(table, "/risk/console");
-//
-//
-//        CodeUtils.createModel(
-//                new Table(
-//                        "t_wallet_product",
-//                        basePath + "/wallet",
-//                        "產品信息",
-//                        "wallet/product",
-//                        mysqlService.getColumn(new Table("t_wallet_product", "macao"))),
-//                "/risk/console"
-//        );
-//        CodeUtils.createModel(
-//                new Table(
-//                        "t_wallet_product_channel",
-//                        basePath + "/wallet",
-//                        "產品支付通道",
-//                        "wallet/product/channel",
-//                        mysqlService.getColumn(new Table("t_wallet_product_channel", "macao"))),
-//                "/risk/console"
-//        );
 
     }
 }

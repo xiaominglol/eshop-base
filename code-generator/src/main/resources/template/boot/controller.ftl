@@ -1,4 +1,4 @@
-package com.gemini.business.${table.moduleName}.controller;
+package ${table.packageName}.${table.moduleName}.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -6,23 +6,25 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.gemini.boot.framework.mybatis.entity.LayUiPage;
 import com.gemini.boot.framework.web.entity.CommonFailInfo;
 import com.gemini.boot.framework.web.entity.Message;
-import com.gemini.business.common.annotation.SysLog;
-import com.gemini.business.${table.moduleName}.po.${table.bigClassName}Po;
-import com.gemini.business.${table.moduleName}.service.${table.bigClassName}Service;
-import com.gemini.business.${table.moduleName}.service.ErrorLogService;
+import ${table.packageName}.common.annotation.SysLog;
+import ${table.packageName}.${table.moduleName}.po.${table.bigClassName}Po;
+import ${table.packageName}.${table.moduleName}.service.${table.bigClassName}Service;
+import ${table.packageName}.platform.service.ErrorLogService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * ${table.tableComment}
  *
  * @author ${table.author}
- * @date 2018-10-24
+ * @date ${table.createDate}
  */
 @Slf4j
 @RestController
@@ -34,7 +36,7 @@ public class ${table.bigClassName}Controller {
 
     @GetMapping("/gotoList")
     public String gotoList() {
-        return "module/${table.moduleName}/_list";
+        return "${table.moduleName}/_list";
     }
 
     @GetMapping
@@ -72,11 +74,11 @@ public class ${table.bigClassName}Controller {
     @SysLog("添加${table.tableComment}")
     @PostMapping
     @ResponseBody
-    public Message add(@RequestBody ${table.bigClassName}Po ${table.smallClassName}Po) {
+    public Message add(@RequestBody ${table.bigClassName}Po po) {
         try {
-            if (StringUtils.isEmpty(${table.smallClassName}Po.getId())) {
-                ${table.smallClassName}Service.insertSync(${table.smallClassName}Po, ${table.smallClassName}Po.getDetailList(), true);
-                return Message.success(${table.smallClassName}Po);
+            if (StringUtils.isEmpty(po.getId())) {
+                ${table.smallClassName}Service.insertSync(po, po.getDetailList(), false);
+                return Message.success(po);
             } else {
                 return Message.fail(CommonFailInfo.Id_ALREADY_EXIST);
             }
@@ -88,11 +90,11 @@ public class ${table.bigClassName}Controller {
     @SysLog("更新${table.tableComment}")
     @PutMapping
     @ResponseBody
-    public Message update(@RequestBody ${table.bigClassName}Po ${table.smallClassName}Po) {
+    public Message update(@RequestBody ${table.bigClassName}Po po) {
         try {
-            if (!StringUtils.isEmpty(${table.smallClassName}Po.getId())) {
-                ${table.smallClassName}Service.updateSync(${table.smallClassName}Po, ${table.smallClassName}Po.getDetailList(), true);
-                return Message.success(${table.smallClassName}Po);
+            if (!StringUtils.isEmpty(po.getId())) {
+                ${table.smallClassName}Service.updateSync(po, po.getDetailList(), false);
+                return Message.success(po);
             } else {
                 return Message.fail(CommonFailInfo.Id_CAN_NOT_BE_EMPTY);
             }

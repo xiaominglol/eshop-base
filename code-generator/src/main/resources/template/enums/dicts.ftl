@@ -1,6 +1,6 @@
 package com.uepay.corebusiness.risk.base.dict;
 
-import com.uepay.framework.normalize.Dict;
+import com.gemini.boot.framework.mybatis.entity.Dict;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,7 +27,7 @@ static {
 dicts.put(0L, new Dict());
 <#list list as dict>
     <#list dict.children as child>
-        dicts.put(${child.id?c}L, new Dict().setId(${child.id?c}L).setCode("${child.code}").setNameCn("${child.nameCn}").setNameEn("${child.nameEn}"));
+        dicts.put(${child.id?c}L, new Dict().setId(${child.id?c}L).setCode("${child.code}").setName("${child.name}"));
     </#list>
 </#list>
 }

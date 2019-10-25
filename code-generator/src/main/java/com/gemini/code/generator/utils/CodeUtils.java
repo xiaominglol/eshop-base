@@ -37,6 +37,14 @@ public class CodeUtils {
         createCode(table, templatePath, "vo", className + "Vo.java");
         createCode(table, templatePath, "menu", className + "：menu.txt");
         createCode(table, templatePath, "test", className + "：test.txt");
+        String s;
+        if(table.getSmartTableName().equals(table.getModuleName())){
+            s = table.getModuleName();
+        }else {
+            s = table.getSmartTableName().substring((table.getModuleName()+"_").length());
+        }
+        createCode(table, templatePath, "listHtml", s + "_list.html");
+        createCode(table, templatePath, "crudHtml", s + "_crud.html");
         System.out.println("end：《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《");
     }
 
@@ -59,8 +67,8 @@ public class CodeUtils {
 
                 if (template != null) {
                     System.out.println(templateName + ".ftl");
-//                    File outFile = new File(table.getCatalog() + fileName);
-                    File outFile = new File((table.getCatalog() + fileName).replaceFirst(table.getSmallClassName(), templateName));
+                    File outFile = new File(table.getCatalog() + templateName + "/" + fileName);
+//                    File outFile = new File((table.getCatalog() + fileName).replaceFirst(table.getSmallClassName(), templateName));
                     if (!outFile.getParentFile().exists()) {
                         outFile.getParentFile().mkdirs();
                     }

@@ -1,14 +1,14 @@
-package com.gemini.business.${table.moduleName}.service;
+package ${table.packageName}.${table.moduleName}.service;
 
-import com.gemini.business.common.service.BaseDetailService;
-import com.gemini.business.${table.moduleName}.mapper.${table.bigClassName}Mapper;
-import com.gemini.business.${table.moduleName}.po.${table.bigClassName}Po;
+import ${table.packageName}.common.service.BaseDetailService;
+import ${table.packageName}.${table.moduleName}.mapper.${table.bigClassName}Mapper;
+import ${table.packageName}.${table.moduleName}.po.${table.bigClassName}Po;
 
 /**
 * ${table.tableComment}
 *
 * @author ${table.author}
-* @date 2018-10-24
+* @date ${table.createDate}
 */
 public interface ${table.bigClassName}Service extends BaseDetailService<${table.bigClassName}Po, ${table.bigClassName}Po, ${table.bigClassName}Mapper, ${table.bigClassName}Mapper> {
 }

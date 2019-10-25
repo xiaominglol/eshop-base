@@ -13,33 +13,83 @@ import java.util.Map;
 @AllArgsConstructor
 public class Table {
 
-    String catalog;//生成代碼的路徑（必填！！！）eg:D:\IdeaProjects-gemini\gemini\gemini-framework/src
-    String dataBaseName;// 数据库名称 eg：product
-    String tableName;//表名称（必填！！！）eg：t_platform_user
-    String tableComment;//表注释（必填！！！）eg：用户表
-    String smartTableName;//美化後的表明（根據tableName生成） eg：platform_user
+
+    /**
+     * 表名称（通过数据库查出）
+     * eg：t_platform_user
+     */
+    String tableName;
+
+    /**
+     * 表注释（通过数据库查出）
+     * eg：用户表
+     */
+    String tableComment;
+
+    /**
+     * 生成代碼的路徑
+     * eg:D:\IdeaProjects-gemini\gemini\gemini-framework/src
+     */
+    String catalog;
+    /**
+     *  数据库名称
+     *  eg：product
+     */
+    String dataBaseName;
+    /**
+     * 需要去掉的表前缀
+     * eg: t_
+     */
+    String tablePrefix;
+    /**
+     * 去掉表前缀后的名称
+     * eg：platform_user
+     */
+    String smartTableName;
     String tableAlias = "";//表別名（不賦值則根據smartTableName生成）
-    String moduleName;//模块名称 eg:platform
+    /**
+     * 模块名称 根据表名称t_platform_user 的“_”分组 得到的第二个
+     * eg:platform
+     */
+    String moduleName;
+    /**
+     * 包名称
+     * eg: com.gemini.business
+     */
+    String packageName;
     /**
      * 首字母大写类名，根據smallClassName生成
      * eg：PlatformUser
      */
     String bigClassName;
     /**
-     * 作者
-     */
-    String author;
-    /**
      * 首字母小写类名
      * eg：platformUser
      */
     String smallClassName;
+    /**
+     * 作者
+     */
+    String author;
+
+    /**
+     * 生成时间
+     */
+    String createDate;
 
     /**
      * controller请求路径
      * eg：/product
      */
     String requestMapping;
+
+
+    /**
+     * 表字段
+     */
+    List<Column> columns;
+
+
     String feignName = "";
     boolean hasBigDecimal = false;
     boolean hasDate = false;
@@ -47,8 +97,6 @@ public class Table {
     String detailListName = null;
 
     boolean isDetail = false;
-
-    List<Column> columns;
 
     List<Map<String, String>> dicts;
 
@@ -109,5 +157,22 @@ public class Table {
                 this.isDetail = true;
             }
         }
+    }
+
+    public Table initTable(Table table){
+        table.setSmartTableName(table.getTableName().substring(table.getTablePrefix().length()));
+        String[] split = table.getSmartTableName().split("_");
+        table.setModuleName(split[0]);
+        table.setSmallClassName(StringUtils.toCamelCase(table.getSmartTableName()));
+        table.setBigClassName(StringUtils.toUpperCaseFirstOne(table.getSmallClassName()));
+        table.setCatalog(table.getCatalog() + ("/" + table.getModuleName() + "/"));
+        String reqeustMapping = "";
+        for(String s : split){
+            reqeustMapping += ("/" + s);
+        }
+        table.setRequestMapping(reqeustMapping);
+
+        table.setTableAlias(split[split.length - 1].substring(0, 1));
+        return table;
     }
 }

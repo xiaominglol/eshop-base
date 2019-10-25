@@ -2,7 +2,6 @@ package com.gemini.code.generator.service.impl;
 
 import com.gemini.code.generator.domain.Column;
 import com.gemini.code.generator.domain.DataBase;
-import com.gemini.code.generator.domain.Table;
 import com.gemini.code.generator.mapper.MysqlMapper;
 import com.gemini.code.generator.service.MysqlService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +20,8 @@ public class MysqlServiceImpl implements MysqlService {
     }
 
 
-    public List<Column> getColumn(Table table) {
-        return mysqlMapper.getColumn(table);
+    public List<Column> getColumn(String tableName) {
+        return mysqlMapper.getColumn(tableName);
     }
 
 }

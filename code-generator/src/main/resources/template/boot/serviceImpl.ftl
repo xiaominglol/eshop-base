@@ -1,10 +1,10 @@
-package com.gemini.business.${table.moduleName}.service.impl;
+package ${table.packageName}.${table.moduleName}.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.gemini.business.common.service.BaseDetailServiceImpl;
-import com.gemini.business.${table.moduleName}.mapper.${table.bigClassName}Mapper;
-import com.gemini.business.${table.moduleName}.po.${table.bigClassName}Po;
-import com.gemini.business.${table.moduleName}.service.${table.bigClassName}Service;
+import ${table.packageName}.common.service.BaseDetailServiceImpl;
+import ${table.packageName}.${table.moduleName}.mapper.${table.bigClassName}Mapper;
+import ${table.packageName}.${table.moduleName}.po.${table.bigClassName}Po;
+import ${table.packageName}.${table.moduleName}.service.${table.bigClassName}Service;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -12,7 +12,7 @@ import org.springframework.util.StringUtils;
 * ${table.tableComment}
 *
 * @author ${table.author}
-* @date 2018-10-24
+* @date ${table.createDate}
 */
 @Service
 public class ${table.bigClassName}ServiceImpl extends BaseDetailServiceImpl<${table.bigClassName}Po, ${table.bigClassName}Po, ${table.bigClassName}Mapper, ${table.bigClassName}Mapper> implements ${table.bigClassName}Service {

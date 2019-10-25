@@ -20,13 +20,6 @@
         data_type 'type',
         column_comment 'comment'
         from information_schema.columns
-        <where>
-            <if test="tableName != '' and tableName != null">
-                and table_name=#{tableName}
-            </if>
-            <if test="dataBaseName != '' and dataBaseName != null">
-                and table_schema=#{dataBaseName}
-            </if>
-        </where>
+        where table_name=#{tableName}
     </select>
 </mapper>

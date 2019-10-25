@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.uepay.corebusiness.risk.cud.service.mapper.${table.className}Mapper">
+<mapper namespace="${table.packageName}.${table.moduleName}.mapper.${table.bigClassName}Mapper">
 
-    <resultMap id="resultMap" type="com.uepay.corebusiness.risk.cud.service.po.${table.className}Po">
+    <resultMap id="resultMap" type="${table.packageName}.${table.moduleName}.po.${table.bigClassName}Po">
         <#list table.columns as column>
             <#if column.name == 'id'>
                 <id column="${column.name}" property="${column.javaName}" javaType="${column.javaFullType}"/>

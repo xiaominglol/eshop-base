@@ -19,7 +19,7 @@ public class BeanUtils extends org.springframework.beans.BeanUtils {
      * 為target對象設置枚舉值
      *
      * @param dictService 枚舉對象
-     * @param target   設置值得對象
+     * @param target      設置值得對象
      */
     public static void setDict(DictService dictService, Object target) {
         Dict dict = dictService.dict();
@@ -33,9 +33,9 @@ public class BeanUtils extends org.springframework.beans.BeanUtils {
     /**
      * 為target對象對應的字段設置枚舉值
      *
-     * @param dictService  枚舉對象
-     * @param target    設置值的對象
-     * @param fieldName 設置值的字段
+     * @param dictService 枚舉對象
+     * @param target      設置值的對象
+     * @param fieldName   設置值的字段
      */
     public static void setDict(DictService dictService, Object target, String fieldName) {
         Dict dict = dictService.dict();
@@ -83,9 +83,9 @@ public class BeanUtils extends org.springframework.beans.BeanUtils {
     /**
      * 获取对象的属性值
      *
-     * @param object 对象
+     * @param object    对象
      * @param fieldName 属性名
-     * @param <Type> 属性值类型
+     * @param <Type>    属性值类型
      * @return 属性值
      */
     public static <Type> Type value(Object object, String fieldName) {

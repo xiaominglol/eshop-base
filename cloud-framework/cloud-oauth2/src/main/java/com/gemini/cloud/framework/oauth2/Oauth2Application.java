@@ -1,7 +1,7 @@
 package com.gemini.cloud.framework.oauth2;
 
 import com.gemini.boot.framework.core.CoreApplication;
-import com.gemini.boot.framework.core.exception.CloudCoreException;
+import com.gemini.boot.framework.core.exception.CoreException;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -20,7 +20,7 @@ public class Oauth2Application {
     String home() {
         return "Hello World";
     }
-	public static void main(String[] args) throws CloudCoreException {
+	public static void main(String[] args) throws CoreException {
 		CoreApplication.run(Oauth2Application.class, args);
 	}
 }

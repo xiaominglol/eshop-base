@@ -14,11 +14,12 @@ public class StringUtils extends org.springframework.util.StringUtils {
 
     /**
      * 首字母转小写
+     *
      * @param s
      * @return
      */
-    public static String toLowerCaseFirstOne(String s){
-        if(Character.isLowerCase(s.charAt(0))) {
+    public static String toLowerCaseFirstOne(String s) {
+        if (Character.isLowerCase(s.charAt(0))) {
             return s;
         }
         return (new StringBuilder()).append(Character.toLowerCase(s.charAt(0))).append(s.substring(1)).toString();
@@ -26,11 +27,12 @@ public class StringUtils extends org.springframework.util.StringUtils {
 
     /**
      * 首字母转大写
+     *
      * @param s
      * @return
      */
-    public static String toUpperCaseFirstOne(String s){
-        if(Character.isUpperCase(s.charAt(0))) {
+    public static String toUpperCaseFirstOne(String s) {
+        if (Character.isUpperCase(s.charAt(0))) {
             return s;
         }
         return (new StringBuilder()).append(Character.toUpperCase(s.charAt(0))).append(s.substring(1)).toString();
@@ -38,6 +40,7 @@ public class StringUtils extends org.springframework.util.StringUtils {
 
     /**
      * 转换为字节数组
+     *
      * @param str
      * @return
      */
@@ -162,6 +165,7 @@ public class StringUtils extends org.springframework.util.StringUtils {
 
     /**
      * 英文語句生成工具
+     *
      * @param s 駝峰命名法命名的字符串
      * @return String
      */
@@ -194,5 +198,5 @@ public class StringUtils extends org.springframework.util.StringUtils {
         }
         return toUpperCaseFirstOne(sb.toString());
     }
-    
+
 }

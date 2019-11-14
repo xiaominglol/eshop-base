@@ -5,13 +5,12 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
  * Redis工具类
+ *
  * @author 小明不读书
  * @date 2019-06-16
  * @since 2.0.0
@@ -85,7 +84,8 @@ public final class CommonRedisUtil {
 
     /**
      * 获取以prefix开头的所有keys
-     * @param prefix    key前缀
+     *
+     * @param prefix key前缀
      * @return
      */
     public Set<String> listKeys(String prefix) {

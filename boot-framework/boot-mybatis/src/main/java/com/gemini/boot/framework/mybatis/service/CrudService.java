@@ -16,6 +16,7 @@ import java.util.Map;
 
 /**
  * Service基類
+ *
  * @author 小明不读书
  */
 public interface CrudService<Pojo, Po extends BasePo, Mapper extends BaseMapper<Po>> {

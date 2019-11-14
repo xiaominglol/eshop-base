@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.fasterxml.jackson.dataformat.yaml.YAMLParser;
 import com.gemini.boot.framework.core.config.ConfigPropertiesResolver;
-import com.gemini.boot.framework.core.exception.CloudCoreException;
+import com.gemini.boot.framework.core.exception.CoreException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
@@ -21,26 +21,27 @@ public class ConfigPropertiesResolverImpl implements ConfigPropertiesResolver {
     private static final String ENCODING = "utf-8";
 
     @Override
-    public Properties buildProperties(List<Resource> resources) throws CloudCoreException {
+    public Properties buildProperties(List<Resource> resources) throws CoreException {
         LOG.info("》》》yml转换为properties start《《《");
         Properties properties = new Properties();
-        for(Resource resource : resources){
+        for (Resource resource : resources) {
             try {
                 InputStream inputStream = resource.getInputStream();
                 properties.putAll(ymlToProperties(inputStream));
             } catch (IOException e) {
-                throw new CloudCoreException("yml转换为properties error", e);
+                throw new CoreException("yml转换为properties error", e);
             }
         }
-        LOG.info("application-cloud-*.xml:"+properties.toString());
+        LOG.info("application-cloud-*.xml:" + properties.toString());
         LOG.info("》》》yml转换为properties end《《《");
         return properties;
     }
 
     /**
      * yml转换为properties
-     * @param inputStream   yml的输入流
-     * @return              properties
+     *
+     * @param inputStream yml的输入流
+     * @return properties
      */
     public static Properties ymlToProperties(InputStream inputStream) {
         Properties properties = new Properties();
@@ -67,7 +68,7 @@ public class ConfigPropertiesResolverImpl implements ConfigPropertiesResolver {
                         continue;
                     }
                     value = parser.getText();
-                    properties.put(key,value);
+                    properties.put(key, value);
 
                     int dotOffset = key.lastIndexOf(DOT);
                     if (dotOffset > 0) {
@@ -86,7 +87,7 @@ public class ConfigPropertiesResolverImpl implements ConfigPropertiesResolver {
             }
             parser.close();
         } catch (Exception e) {
-            throw new RuntimeException("yml转换为properties异常",e);
+            throw new RuntimeException("yml转换为properties异常", e);
         }
         return properties;
     }

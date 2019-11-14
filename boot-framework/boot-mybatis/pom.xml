@@ -14,6 +14,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.gemini.boot.framework</groupId>
+            <artifactId>boot-shiro</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>

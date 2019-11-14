@@ -1,7 +1,7 @@
 package com.gemini.cloud.framework.admin;
 
 import com.gemini.boot.framework.core.CoreApplication;
-import com.gemini.boot.framework.core.exception.CloudCoreException;
+import com.gemini.boot.framework.core.exception.CoreException;
 import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -17,7 +17,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 public class AdminApplication {
 
-    public static void main(String[] args) throws CloudCoreException {
+    public static void main(String[] args) throws CoreException {
         CoreApplication.run(AdminApplication.class, args);
     }
 

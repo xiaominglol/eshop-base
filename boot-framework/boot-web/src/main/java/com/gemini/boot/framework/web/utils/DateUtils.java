@@ -58,11 +58,12 @@ public class DateUtils {
 
     /**
      * 得到当前时间的前N小时
-     * 
+     *  
+     *
      * @param past
      * @return
      */
-    public static String getBeforeHourForPast(int past){
+    public static String getBeforeHourForPast(int past) {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, calendar.get(Calendar.HOUR_OF_DAY) - past);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

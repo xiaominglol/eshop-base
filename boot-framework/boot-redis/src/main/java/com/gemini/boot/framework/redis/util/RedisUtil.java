@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Redis工具类
+ *
  * @author 小明不读书
  * @date 2019-06-16
  * @since 2.0.0

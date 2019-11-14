@@ -17,7 +17,6 @@ package com.gemini.boot.framework.mybatis.exception;
 
 /**
  * UidGenerateException
- *
  */
 public class UidServiceException extends RuntimeException {
 

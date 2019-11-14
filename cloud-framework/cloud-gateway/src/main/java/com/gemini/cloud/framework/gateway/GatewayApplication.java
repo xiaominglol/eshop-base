@@ -1,7 +1,7 @@
 package com.gemini.cloud.framework.gateway;
 
 import com.gemini.boot.framework.core.CoreApplication;
-import com.gemini.boot.framework.core.exception.CloudCoreException;
+import com.gemini.boot.framework.core.exception.CoreException;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
@@ -14,7 +14,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableDiscoveryClient
 @SpringBootApplication
 public class GatewayApplication {
-	public static void main(String[] args) throws CloudCoreException {
+	public static void main(String[] args) throws CoreException {
 		CoreApplication.run(GatewayApplication.class, args);
 	}
 }

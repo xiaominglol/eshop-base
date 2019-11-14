@@ -1,9 +1,9 @@
 package com.gemini.boot.framework.mybatis.service.impl;
 
 import com.gemini.boot.framework.mybatis.entity.BitsAllocator;
-import com.gemini.boot.framework.mybatis.utils.NetUtils;
 import com.gemini.boot.framework.mybatis.exception.UidServiceException;
 import com.gemini.boot.framework.mybatis.service.UidService;
+import com.gemini.boot.framework.mybatis.utils.NetUtils;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.slf4j.Logger;
@@ -82,7 +82,7 @@ public class UidServiceImpl implements UidService, InitializingBean {
 
         // initialize worker id
         //控制好应用 的workerid 唯一
-        workerId = NetUtils.getAddressSum()+NetUtils.getPort();
+        workerId = NetUtils.getAddressSum() + NetUtils.getPort();
         if (workerId > bitsAllocator.getMaxWorkerId()) {
             throw new RuntimeException("Worker id " + workerId + " exceeds the max " + bitsAllocator.getMaxWorkerId());
         }
@@ -112,7 +112,7 @@ public class UidServiceImpl implements UidService, InitializingBean {
         long sequence = (uid << (totalBits - sequenceBits)) >>> (totalBits - sequenceBits);
         long workerId = (uid << (timestampBits + signBits)) >>> (totalBits - workerIdBits);
         long deltaSeconds = uid >>> (workerIdBits + sequenceBits);
-        DateTime thatTime =new DateTime(TimeUnit.SECONDS.toMillis(epochSeconds + deltaSeconds));
+        DateTime thatTime = new DateTime(TimeUnit.SECONDS.toMillis(epochSeconds + deltaSeconds));
         String thatTimeStr = thatTime.toString("yyyy-MM-dd HH:mm:ss");
         // format as string
         return String.format("{\"UID\":\"%d\",\"timestamp\":\"%s\",\"workerId\":\"%d\",\"sequence\":\"%d\"}",
@@ -200,7 +200,7 @@ public class UidServiceImpl implements UidService, InitializingBean {
         if (!StringUtils.isEmpty(epochStr)) {
             this.epochStr = epochStr;
             this.epochSeconds = TimeUnit.MILLISECONDS.toSeconds(DateTimeFormat.forPattern("yyyy-MM-dd")
-                            .parseDateTime(epochStr).getMillis());
+                    .parseDateTime(epochStr).getMillis());
         }
     }
 

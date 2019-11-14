@@ -4,8 +4,8 @@ spring:
     host: 47.110.47.45
     port: 6378
     ## 集群配置
-#    cluster:
-#      nodes: 47.110.47.45:6378
+    #    cluster:
+    #      nodes: 47.110.47.45:6378
     ## Redis数据库索引(默认为0)
     database: 0
     lettuce:

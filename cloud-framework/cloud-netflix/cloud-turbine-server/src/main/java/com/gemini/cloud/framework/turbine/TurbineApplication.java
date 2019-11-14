@@ -1,7 +1,7 @@
 package com.gemini.cloud.framework.turbine;
 
 import com.gemini.boot.framework.core.CoreApplication;
-import com.gemini.boot.framework.core.exception.CloudCoreException;
+import com.gemini.boot.framework.core.exception.CoreException;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
@@ -25,7 +25,7 @@ public class TurbineApplication {
 	public String index(){
 		return "forward:/hystrix";
 	}
-	public static void main(String[] args) throws CloudCoreException {
+	public static void main(String[] args) throws CoreException {
 		CoreApplication.run(TurbineApplication.class, args);
 	}
 }

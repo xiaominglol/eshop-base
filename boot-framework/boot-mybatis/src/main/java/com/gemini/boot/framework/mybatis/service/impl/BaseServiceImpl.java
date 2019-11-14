@@ -1,6 +1,8 @@
-package com.gemini.boot.framework.mybatis.service;
+package com.gemini.boot.framework.mybatis.service.impl;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.gemini.boot.framework.mybatis.service.BaseService;
+import com.gemini.boot.framework.mybatis.service.UidService;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,7 @@
-package com.gemini.boot.framework.mybatis.service;
+package com.gemini.boot.framework.mybatis.service.impl;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.gemini.boot.framework.mybatis.service.BaseDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**

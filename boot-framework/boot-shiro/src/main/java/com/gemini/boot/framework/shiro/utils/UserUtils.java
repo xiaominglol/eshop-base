@@ -1,5 +1,6 @@
-package com.gemini.boot.framework.shiro.entity;
+package com.gemini.boot.framework.shiro.utils;
 
+import com.gemini.boot.framework.shiro.entity.UserInfo;
 import org.apache.shiro.SecurityUtils;
 
 /**

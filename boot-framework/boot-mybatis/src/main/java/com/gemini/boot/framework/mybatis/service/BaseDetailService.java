@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.gemini.boot.framework.mybatis.enums.StateEnum;
 import com.gemini.boot.framework.mybatis.utils.BeanUtils;
 import com.gemini.boot.framework.shiro.entity.UserInfo;
-import com.gemini.boot.framework.shiro.entity.UserUtils;
+import com.gemini.boot.framework.shiro.utils.UserUtils;
 import org.springframework.scheduling.annotation.Async;
 
 import java.util.List;

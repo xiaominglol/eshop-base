@@ -3,6 +3,7 @@ package com.gemini.boot.framework.shiro.entity;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 public class UserInfo {
@@ -23,7 +24,16 @@ public class UserInfo {
     private String name;
 
     /**
+     * 用户头像
+     */
+    private String picture;
+
+    /**
      * 用户角色
      */
-    private List<String> roleName;
+    private Set<String> roles;
+    /**
+     * 用户权限
+     */
+    private Set<String> permissions;
 }

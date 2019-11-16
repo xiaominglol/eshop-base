@@ -18,6 +18,7 @@
         <module>cloud-apollo-server</module>
         <module>cloud-apollo-client</module>
         <module>cloud-turbine-server</module>
+        <module>cloud-admin-server</module>
     </modules>
 
 

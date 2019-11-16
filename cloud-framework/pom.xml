@@ -13,7 +13,6 @@
         <module>cloud-core</module>
         <module>cloud-netflix</module>
         <module>cloud-alibaba</module>
-        <module>cloud-admin</module>
         <module>cloud-gateway</module>
         <module>cloud-oauth2</module>
         <module>cloud-mq</module>

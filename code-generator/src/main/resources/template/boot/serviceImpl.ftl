@@ -1,7 +1,7 @@
 package ${table.packageName}.${table.moduleName}.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import ${table.packageName}.common.service.BaseDetailServiceImpl;
+import com.gemini.boot.framework.mybatis.service.impl.BaseDetailServiceImpl;
 import ${table.packageName}.${table.moduleName}.mapper.${table.bigClassName}Mapper;
 import ${table.packageName}.${table.moduleName}.po.${table.bigClassName}Po;
 import ${table.packageName}.${table.moduleName}.service.${table.bigClassName}Service;

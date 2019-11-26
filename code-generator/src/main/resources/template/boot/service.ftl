@@ -1,6 +1,6 @@
 package ${table.packageName}.${table.moduleName}.service;
 
-import ${table.packageName}.common.service.BaseDetailService;
+import com.gemini.boot.framework.mybatis.service.BaseDetailService;
 import ${table.packageName}.${table.moduleName}.mapper.${table.bigClassName}Mapper;
 import ${table.packageName}.${table.moduleName}.po.${table.bigClassName}Po;
 

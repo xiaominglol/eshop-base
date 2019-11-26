@@ -13,14 +13,9 @@ import java.util.Map;
 public class CodeUtils {
 
     /**
-     * 生成代码
      *
-     * @param map          key=表名称，value=表注释
+     * @param table
      * @param templatePath
-     * @param mysqlService
-     * @param catalog      代码生成的目录
-     * @param author
-     * @param request
      */
 
     public static void createModel(Table table, String templatePath) {

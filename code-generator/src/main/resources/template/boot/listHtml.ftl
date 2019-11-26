@@ -1,4 +1,4 @@
-<div th:replace="module/${table.moduleName}/dict_crud"></div>
+<div th:replace="${table.moduleName}/dict_crud"></div>
 
 <div class="layui-fluid">
     <div class="layui-row layui-col-space15">

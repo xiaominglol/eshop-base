@@ -74,21 +74,26 @@
     layui.use(['form', 'table'], function () {
         var form = layui.form;
         var table = layui.table;
-        var baseUrl = "/sys/dict";
+        var baseUrl = "/goods/category";
+        var moduleName = "分类";
         var requestType;
         var baseCols = [[
             {checkbox: true}
-            , {field: 'code', title: '字典编码', width: 160}
-            , {field: 'name', title: '字典名称', width: 160}
-            , {field: 'description', title: '描述'}
-            , {field: 'stateName', title: '状态', width: 80}
+            , {field: 'name', title: '名称'}
+            , {field: 'icon', title: 'icon'}
+            , {field: 'sort', title: '排序'}
             , {title: '操作', width: 120, toolbar: '#optToolBar'}
         ]];
         var baseDetailCols = [
-            {type: 'checkbox', width: 35},
-            {field: 'code', title: '字典编码', width: 200, align: 'left', edit: 'text'},
-            {field: 'name', title: '字典名称', width: 200, align: 'left', edit: 'text'},
-            {field: 'description', title: '描述', align: 'left', edit: 'text'}
+            {type: 'checkbox', width: 35}
+            , {field: 'name', title: '名称', edit: 'text'}
+            , {field: 'icon', title: 'icon', edit: 'text'}
+            , {field: 'sort', title: '排序', edit: 'text'}
+        ];
+        var baseUpdateCols = [
+            {field: 'name', type: "text"}
+            , {field: 'icon', type: "text"}
+            , {field: 'sort', type: "text"}
         ];
 
         //左侧树
@@ -122,7 +127,7 @@
         //添加
         $(".addButton").click(function () {
             requestType = add({
-                title: '添加字典'
+                title: '添加' + moduleName
                 , cols: baseDetailCols
             });
         });
@@ -130,14 +135,10 @@
         // 修改
         $(".editButton").click(function () {
             requestType = edit({
-                title: '修改字典'
+                title: '修改' + moduleName
                 , url: baseUrl
                 , cols: baseDetailCols
-                , fields: [
-                    {field: 'code', type: "text"}
-                    , {field: 'name', type: "text"}
-                    , {field: 'description', type: "text"}
-                ]
+                , fields: baseUpdateCols
             });
         });
 
@@ -170,11 +171,9 @@
 
         // 新增一行 明细
         $(".add_detail").click(function () {
-            var data = {code: "", name: "", description: ""};
             addRowButton({
                 table: "detailTable"
-                , id: "code"
-                , data: data
+                , cols: baseDetailCols
             })
         });
 
@@ -182,7 +181,7 @@
         $(".delete_detail").click(function () {
             batchDelButton({
                 table: "detailTable"
-                , id: "code"
+                , cols: baseDetailCols
             })
         });
     });
@@ -190,7 +189,7 @@
 </script>
 
 <script type="text/html" id="optToolBar">
-    {{#  if(d.status == 1){ }}
+    {{#  if(d.stateCode == 'Enable'){ }}
     <a class="layui-btn layui-btn-sm layui-btn-danger" lay-event="disable"><i
                 class="layui-icon layui-icon-password"></i>禁用</a>
     {{#  } else { }}

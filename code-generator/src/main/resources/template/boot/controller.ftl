@@ -41,7 +41,7 @@ public class ${table.bigClassName}Controller {
 
     @GetMapping
     @ResponseBody
-    public Message list(LayUiPage layUiPage, ${table.bigClassName}Po ${table.smallClassName}Po) {
+    public Message list(LayUiPage layUiPage, ${table.bigClassName}Po po) {
         try {
             QueryWrapper <${table.bigClassName}Po> qw = new QueryWrapper<>();
             if (layUiPage.getPageNum() != 0 && layUiPage.getPageSize() != 0) {

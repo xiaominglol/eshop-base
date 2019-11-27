@@ -1,30 +1,31 @@
 <div id="addOrUpdate" style="display: none">
     <form class="layui-form layui-form-pane">
+        <input type="hidden" name="id">
         <div class="layui-row">
             <div class="layui-col-md6">
                 <div class="layui-form-item">
-                    <label class="layui-form-label"><span class="require">*</span>字典编码</label>
-                    <div class="layui-input-block">
-                        <input type="hidden" name="id">
-                        <input type="text" name="code" required lay-verify="required" autocomplete="off"
-                               class="layui-input">
-                    </div>
-                </div>
-            </div>
-            <div class="layui-col-md6">
-                <div class="layui-form-item">
-                    <label class="layui-form-label"><span class="require">*</span>字典名称</label>
+                    <label class="layui-form-label">名称<span class="require">*</span></label>
                     <div class="layui-input-block">
                         <input type="text" id="name" name="name" required lay-verify="required" autocomplete="off"
                                class="layui-input">
                     </div>
                 </div>
             </div>
+            <div class="layui-col-md6">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">icon</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="icon" autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">描述</label>
+            <label class="layui-form-label">sort<span class="require">*</span></label>
             <div class="layui-input-block">
-                <input type="text" name="description" autocomplete="off" class="layui-input">
+                <input type="text" name="sort" required lay-verify="required" value="1" autocomplete="off"
+                       class="layui-input">
             </div>
         </div>
         <div class="layui-form-item" align="right" style="float: right;margin-right: 35px">

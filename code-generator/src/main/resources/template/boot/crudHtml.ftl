@@ -6,7 +6,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">名称<span class="require">*</span></label>
                     <div class="layui-input-block">
-                        <input type="text" id="name" name="name" required lay-verify="required" autocomplete="off"
+                        <input type="text" name="name" required lay-verify="required" autocomplete="off"
                                class="layui-input">
                     </div>
                 </div>

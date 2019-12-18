@@ -18,7 +18,7 @@
         <module>cloud-mq</module>
         <module>cloud-es</module>
         <module>cloud-service</module>
-        <module>cloud-facade</module>
+        <module>cloud-api</module>
     </modules>
 
     <properties>
@@ -35,27 +35,14 @@
         <cloud-business.version>2.0.0-SNAPSHOT</cloud-business.version>
 
         <!--框架版本-->
-        <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
-        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
         <spring-boot-admin.version>2.1.5</spring-boot-admin.version>
         <spring-alibaba-cloud.version>2.1.0.RELEASE</spring-alibaba-cloud.version>
 
         <!--第三方版本-->
         <apollo.version>1.4.0</apollo.version>
-        <mybatis.version>2.0.1</mybatis.version>
-        <mybatis-plus.version>3.1.1</mybatis-plus.version>
-        <druid.version>1.1.17</druid.version>
-        <p6spy.version>3.8.1</p6spy.version>
-        <redisson.version>3.11.0</redisson.version>
         <!-- 版本管理工具 -->
         <versions-maven.version>2.7</versions-maven.version>
-
-        <pagehelper.version>1.2.10</pagehelper.version>
-        <shiro.version>1.4.0</shiro.version>
-        <lombok.version>1.18.4</lombok.version>
-        <fastjson.version>1.2.51</fastjson.version>
-        <poi-3.14.version>3.14</poi-3.14.version>
-        <poi-4.0.0.version>4.0.0</poi-4.0.0.version>
     </properties>
 
     <dependencyManagement>
@@ -117,7 +104,7 @@
             </dependency>
             <dependency>
                 <groupId>com.gemini.cloud.framework</groupId>
-                <artifactId>cloud-facade</artifactId>
+                <artifactId>cloud-api</artifactId>
                 <version>${cloud-framework.version}</version>
             </dependency>
             <dependency>
@@ -159,4 +146,17 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <name>Nexus Release Repository</name>
+            <url>http://192.168.0.31:18081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://192.168.0.31:18081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>

@@ -16,23 +16,7 @@
         <!--自定义模块-->
         <dependency>
             <groupId>com.gemini.cloud.framework</groupId>
-            <artifactId>cloud-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.gemini.cloud.framework</groupId>
             <artifactId>cloud-apollo-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.gemini.boot.framework</groupId>
-            <artifactId>boot-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.gemini.boot.framework</groupId>
-            <artifactId>boot-mybatis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.gemini.boot.framework</groupId>
-            <artifactId>boot-redis</artifactId>
         </dependency>
         <!--框架模块-->
         <!--eureka客户端-->
@@ -49,16 +33,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
-        </dependency>
-        <!--监控-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
         </dependency>
     </dependencies>
 </project>

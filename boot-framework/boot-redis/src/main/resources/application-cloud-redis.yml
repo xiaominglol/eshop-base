@@ -1,8 +1,8 @@
 spring:
   redis:
     ## 单机配置
-    host: 47.110.47.45
-    port: 6378
+    host: 192.168.0.110
+    port: 6379
     ## 集群配置
     #    cluster:
     #      nodes: 47.110.47.45:6378

@@ -14,14 +14,34 @@
 
     <dependencies>
         <!--自定义模块-->
-        <dependency>
-            <groupId>com.gemini.cloud.framework</groupId>
-            <artifactId>cloud-eureka-client</artifactId>
-        </dependency>
         <!--        <dependency>-->
         <!--            <groupId>com.gemini.cloud.framework</groupId>-->
-        <!--            <artifactId>cloud-nacos-client</artifactId>-->
+        <!--            <artifactId>cloud-eureka-client</artifactId>-->
         <!--        </dependency>-->
+        <dependency>
+            <groupId>com.gemini.cloud.framework</groupId>
+            <artifactId>cloud-nacos-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gemini.cloud.framework</groupId>
+            <artifactId>cloud-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gemini.boot.framework</groupId>
+            <artifactId>boot-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gemini.boot.framework</groupId>
+            <artifactId>boot-mybatis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gemini.boot.framework</groupId>
+            <artifactId>boot-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

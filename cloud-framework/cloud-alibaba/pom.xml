@@ -15,6 +15,7 @@
     <modules>
         <module>cloud-nacos-server</module>
         <module>cloud-nacos-client</module>
+        <module>cloud-sentinel-server</module>
     </modules>
 
 </project>

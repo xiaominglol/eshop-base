@@ -36,7 +36,6 @@
 
         <!--核心框架版本-->
         <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
-        <spring-platform.version>Cairo-SR8</spring-platform.version>
 
         <!--第三方版本-->
 
@@ -63,14 +62,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--            TODO 待研究-->
-            <!--            <dependency>-->
-            <!--                <groupId>io.spring.platform</groupId>-->
-            <!--                <artifactId>platform-bom</artifactId>-->
-            <!--                <version>${spring-platform.version}</version>-->
-            <!--                <type>pom</type>-->
-            <!--                <scope>import</scope>-->
-            <!--            </dependency>-->
             <!--自定义模块-->
             <dependency>
                 <groupId>com.gemini.boot.framework</groupId>
@@ -90,6 +81,11 @@
             <dependency>
                 <groupId>com.gemini.boot.framework</groupId>
                 <artifactId>boot-redis</artifactId>
+                <version>${boot-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gemini.boot.framework</groupId>
+                <artifactId>boot-swagger</artifactId>
                 <version>${boot-framework.version}</version>
             </dependency>
             <dependency>

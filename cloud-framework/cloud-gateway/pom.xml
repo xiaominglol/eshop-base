@@ -15,12 +15,16 @@
     <dependencies>
         <dependency>
             <groupId>com.gemini.cloud.framework</groupId>
-            <artifactId>cloud-core</artifactId>
+            <artifactId>cloud-service</artifactId>
             <!--gateway基于webflux，所以要排除web-->
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-web</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.gemini.boot.framework</groupId>
+                    <artifactId>boot-mybatis</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -29,23 +33,4 @@
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>com.gemini.cloud.framework.gateway.GatewayApplication</mainClass>
-                    <layout>JAR</layout>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>

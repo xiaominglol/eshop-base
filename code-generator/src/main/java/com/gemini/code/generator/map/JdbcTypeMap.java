@@ -39,6 +39,7 @@ public class JdbcTypeMap {
         JAVA_TYPE_MAP.put("ref", "Ref");
         JAVA_TYPE_MAP.put("datalink", "URL");
         JAVA_TYPE_MAP.put("longtext", "String");
+        JAVA_TYPE_MAP.put("text", "String");
 
         JAVA_FULL_TYPE_MAP.put("char", "String");
         JAVA_FULL_TYPE_MAP.put("varchar", "String");
@@ -69,5 +70,6 @@ public class JdbcTypeMap {
         JAVA_FULL_TYPE_MAP.put("ref", "Ref");
         JAVA_FULL_TYPE_MAP.put("datalink", "java.net.URL");
         JAVA_FULL_TYPE_MAP.put("longtext", "String");
+        JAVA_FULL_TYPE_MAP.put("text", "String");
     }
 }

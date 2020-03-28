@@ -44,7 +44,7 @@ public class CodeGeneratorApplicationTests {
 
         // 初始化基本参数
         Table table = new Table();
-        table.setDataBaseName("product");
+        table.setDataBaseName("education");
         table.setTablePrefix("");
         table.setPackageName("com.gemini.business");
         table.setAuthor("小明不读书");

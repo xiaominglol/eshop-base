@@ -32,6 +32,8 @@ public class Message {
      */
     private Object data;
 
+//    private Message(){}
+
     public static Message success(Object data) {
         Message message = new Message();
         message.setSuccess(true);

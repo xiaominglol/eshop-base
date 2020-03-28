@@ -1,5 +1,17 @@
 # gemini-framework
 
+必装idea插件
+LomBok
+MybatisX
+grep-console 彩色日志
+Vue.js
+
+必装vscode插件
+Chinese
+Live Server  内置服务器
+Vetur vue开发工具
+vue-helper vue开发工具
+
 ```
 ├─boot-framework
 │  ├─boot-core      boot核心    已完成

@@ -113,6 +113,11 @@
                 <artifactId>cloud-mq</artifactId>
                 <version>${cloud-framework.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.gemini.cloud.framework</groupId>
+                <artifactId>cloud-gateway</artifactId>
+                <version>${cloud-framework.version}</version>
+            </dependency>
             <!--第三方模块-->
             <dependency>
                 <groupId>com.ctrip.framework.apollo</groupId>

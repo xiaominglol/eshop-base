@@ -47,6 +47,7 @@
         <shiro.version>1.4.0</shiro.version>
         <fastjson.version>1.2.51</fastjson.version>
         <poi-3.14.version>3.14</poi-3.14.version>
+        <easyexcel.version>2.1.6</easyexcel.version>
         <poi-4.0.0.version>4.0.0</poi-4.0.0.version>
         <!-- 版本管理工具 -->
         <versions-maven.version>2.7</versions-maven.version>
@@ -110,6 +111,12 @@
                 <artifactId>poi-ooxml</artifactId>
                 <version>${poi-3.14.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
+
             <!--boot-mybatis-->
             <dependency>
                 <groupId>com.baomidou</groupId>

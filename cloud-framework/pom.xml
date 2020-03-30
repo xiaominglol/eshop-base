@@ -19,6 +19,7 @@
         <module>cloud-es</module>
         <module>cloud-service</module>
         <module>cloud-api</module>
+        <module>cloud-oss</module>
     </modules>
 
     <properties>
@@ -116,6 +117,11 @@
             <dependency>
                 <groupId>com.gemini.cloud.framework</groupId>
                 <artifactId>cloud-gateway</artifactId>
+                <version>${cloud-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gemini.cloud.framework</groupId>
+                <artifactId>cloud-oss</artifactId>
                 <version>${cloud-framework.version}</version>
             </dependency>
             <!--第三方模块-->

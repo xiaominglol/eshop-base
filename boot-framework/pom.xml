@@ -44,7 +44,7 @@
         <p6spy.version>3.8.1</p6spy.version>
 
         <redisson.version>3.11.0</redisson.version>
-        <shiro.version>1.4.0</shiro.version>
+        <shiro.version>1.7.0</shiro.version>
         <fastjson.version>1.2.51</fastjson.version>
         <poi-3.14.version>3.14</poi-3.14.version>
         <easyexcel.version>2.1.6</easyexcel.version>
